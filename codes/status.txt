@@ -1,8 +1,9 @@
 cmd create network Check the Network's Status
+cmd add network sleep 2
 cmd add network %player% = %p%
 cmd add network %gui%[\"type\"] = \"form\"
 cmd add network %gui%[\"title\"] = \"§6nnetwork Status\"
-cmd add network %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\nNetwork Core - §e§lONLINE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions - §c§lOFFLINE§r\"
+cmd add network %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\n§6Network Core - §e§lONLINE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions - §c§lOFFLINE§r\"
 cmd add network %button0%[\"text\"] = \"§cExit\"
 cmd add network %buttons%[] = %button0%
 cmd add network %gui%[\"buttons\"] = %buttons%
