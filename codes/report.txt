@@ -48,10 +48,8 @@ cmd edit report 109 %i1%[\"text\"] = \"§6Describe your bug below.\"
 cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type here...\"
 cmd edit report 111 %con%[] = %i1%
 cmd edit report 112 %form%[\"content\"] = %con%
-cmd edit report 113 %res% = dialog(%p%, %form%)
-cmd edit report 114 if %res% = %false% then exit
-cmd edit report 115 %res% = %res%[1]
-cmd edit report 116 if %res% = \"\" then exit
-cmd edit report 117 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!.
-cmd edit report 118 ascon /cmd add bugs %p% reported this bug: %res%
-cmd edit report 119 exit
+cmd edit report 113 %response% = dialog(%p%, %form%)
+cmd edit report 114 if %response% = \"\" then exit
+cmd edit report 115 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!.
+cmd edit report 116 ascon /cmd add bugs %p% reported this bug: %res%
+cmd edit report 117 exit
