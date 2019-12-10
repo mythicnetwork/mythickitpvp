@@ -1,0 +1,57 @@
+cmd edit report 1 %player% = %p%
+cmd edit report 2 %gui%[\"type\"] = \"form\"
+cmd edit report 3 %gui%[\"title\"] = \"§6Report UI 1.0.0-beta\"
+cmd edit report 4 %gui%[\"content\"] = \"§6What would you like to report?\\nP.s Do not click on the bug report option because it will freeze the /report command making you re-log to make it work again.\"
+cmd edit report 5 %button0%[\"text\"] = \"§dA player\"
+cmd edit report 6 %button1%[\"text\"] = \"§dA bug\"
+cmd edit report 7 %button2%[\"text\"] = \"§cExit\"
+cmd edit report 8 %buttons%[] = %button0%
+cmd edit report 9 %buttons%[] = %button1%
+cmd edit report 10 %buttons%[] = %button2%
+cmd edit report 11 %gui%[\"buttons\"] = %buttons%
+cmd edit report 12 %response% = dialog(%player%, %gui%)
+cmd edit report 13 if %response% = 0 then goto 17
+cmd edit report 14 if %response% = 1 then goto 104
+cmd edit report 15 if %response% = 2 then goto exit
+cmd edit report 16 exit
+cmd edit report 17 let %player% = %p%
+cmd edit report 18 if varset(%args%[1]) then %player% = %args%[1]
+cmd edit report 19 %all% = onlineplayers()
+cmd edit report 31 let %form%[\"type\"] = \"custom_form\"
+cmd edit report 32 let %form%[\"title\"] = \"§6Player Report\"
+cmd edit report 35 let %item1%[\"type\"] = \"dropdown\"
+cmd edit report 36 let %item1%[\"text\"] = \"§6Select a player to report.\"
+cmd edit report 37 let %item1%[\"options\"] = %all%
+cmd edit report 38 let %item2%[\"type\"] = \"input\"
+cmd edit report 39 let %item2%[\"text\"] = \"§6Type why you want to report this player.\"
+cmd edit report 41 let %item2%[\"placeholder\"] = \"Reason\"
+cmd edit report 53 let %content%[] = %item1%
+cmd edit report 54 let %content%[] = %item2%
+cmd edit report 58 let %form%[\"content\"] = %content%
+cmd edit report 60 let %response% = dialog(%player%, %form%)
+cmd edit report 61 if %response% = %false% then exit
+cmd edit report 62 %index% = %response%[0]
+cmd edit report 63 %name% = %all%[%index%]
+cmd edit report 64 %reason% = %response%[1]
+cmd edit report 65 if varset(%name%) and varset(%reason%) then goto 100
+cmd edit report 68 exit
+cmd edit report 100 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported §d%name%§6 for §d%reason%§6.
+cmd edit report 101 ascon /cmd add reports %p% report %name% for %reason%.
+cmd edit report 102 exit
+cmd edit report 103 #BUG
+cmd edit report 104 %all% = onlineplayers()
+cmd edit report 105 %player% = %p% 
+cmd edit report 106 %form%[\"type\"] = \"custom_form\"
+cmd edit report 107 %form%[\"title\"] = \"§6Report a bug\"
+cmd edit report 108 %i1%[\"type\"] = \"input\"
+cmd edit report 109 %i1%[\"text\"] = \"§6Describe your bug below.\"
+cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type here...\"
+cmd edit report 111 %con%[] = %i1%
+cmd edit report 112 %form%[\"content\"] = %con%
+cmd edit report 113 %res% = dialog(%p%, %form%)
+cmd edit report 114 if %res% = %false% then exit
+cmd edit report 115 %res% = %res%[1]
+cmd edit report 116 if %res% = \"\" then exit
+cmd edit report 117 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!.
+cmd edit report 118 ascon /cmd add bugs %p% reported this bug: %res%
+cmd edit report 119 exit

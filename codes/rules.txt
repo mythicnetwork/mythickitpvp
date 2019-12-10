@@ -1,0 +1,10 @@
+cmd create rules Server Rules
+cmd add rules %player% = %p%
+cmd add rules %gui%[\"type\"] = \"form\"
+cmd add rules %gui%[\"title\"] = \"§d§lMythic §cNetwork §r§e§k||§r§6 Rules\"
+cmd add rules %gui%[\"content\"] = \"§eWelcome to §d§lMythic§c Network§r§e! Before you continue please follow our rules.\\n§6[1] Don't swear at other people.\\n§6[2] Don't be disrespectful to Staff Members.\\n§6[3] Don't post 18+ porn content. There may be little kids on the server.\\n§6[4] Don't advertise your server or other services related to minecraft/discord servers.\\n§6[5] Don't trade with others stuff for real money. It is prohibited.\\n§6[6] Make sure to accept and follow the Minecraft Terms of Service (ToS).\\n§6Thank you for joining and following the rules.\"
+cmd add rules %button0%[\"text\"] = \"§cExit\"
+cmd add rules %buttons%[] = %button0%
+cmd add rules %gui%[\"buttons\"] = %buttons%
+cmd add rules %response% = dialog(%player%, %gui%)
+cmd add rules if %response% = 0 then exit

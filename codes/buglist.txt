@@ -1,0 +1,3 @@
+- /home gives internal
+- /report gives undefined variable error
+- /afk gives internal

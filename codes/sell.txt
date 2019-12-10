@@ -1,0 +1,221 @@
+cmd create sell Sell your items! 
+cmd add sell let %status% = playerstatus(%p%)
+cmd add sell load %sells%
+cmd add sell if varset(%args%[1]) = %false% then goto 188
+cmd add sell if varset(%sells%) then goto 10
+cmd add sell let %sell%["ids"] = array(0)
+cmd add sell let %sell%["variants"] = array(0)
+cmd add sell let %sell%["prices"] = array(0)
+cmd add sell let %sells% = %sell%
+cmd add sell save %sells%
+cmd add sell if %args%[1] = \"add\" then goto 20
+cmd add sell if %args%[1] = \"list\" then goto 67
+cmd add sell if %args%[1] = \"remove\" then goto 91
+cmd add sell if %args%[1] = \"hand\" then goto 120
+cmd add sell if %args%[1] = \"edit\" then goto 155
+cmd add sell if %args%[1] = \"reset\" then goto 177
+cmd add sell if %args%[1] = \"about\" then goto 182
+cmd add sell if %args%[1] = \"help\" then goto 186
+cmd add sell message %p% §cSee all commands by using /sell help!
+cmd add sell exit
+cmd add sell if %status%["op"] = %true% then goto 23
+cmd add sell message %p% §cYou do not have permission to use this command!
+cmd add sell exit
+cmd add sell if varset(%args%[2]) then goto 26
+cmd add sell message %p% §cUsage: /sell add <id:meta> <price>
+cmd add sell exit
+cmd add sell if varset(%args%[3]) then goto 28
+cmd add sell goto 24
+cmd add sell let %item% = \"\" + %args%[2] + \"\"
+cmd add sell let %item% = split(%item%, \":\")
+cmd add sell let %id% = %item%[0]
+cmd add sell if %id% > 0 then goto 34
+cmd add sell message %p% §cInvalid ID!
+cmd add sell exit
+cmd add sell if (varset(%item%[1]) = %false%) or (%item%[1] = \"\") then goto 39
+cmd add sell let %meta% = %item%[1]
+cmd add sell if %meta% > -1 then goto 40
+cmd add sell message %p% §cInvalid Meta/Variant!
+cmd add sell exit
+cmd add sell let %meta% = 0
+cmd add sell let %price% = %args%[3]
+cmd add sell if %price% > 0 then goto 44
+cmd add sell message %p% §cInvalid Price!
+cmd add sell exit
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell let %variants% = %sells%["variants"]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell async
+cmd add sell let %size% = size(%ids%)
+cmd add sell let %size% = %size% - 1
+cmd add sell if %size% = 0 then goto 57
+cmd add sell let %ida% = %ids%[%size%]
+cmd add sell let %metasa% = %variants%[%size%]
+cmd add sell if (%id% != %ida%) or (%meta% != %metasa%) then goto 49
+cmd add sell sync
+cmd add sell message %p% §cThis item is already added!
+cmd add sell exit
+cmd add sell sync
+cmd add sell let %ids% = array(%ids%, %id%)
+cmd add sell let %variants% = array(%variants%, %meta%)
+cmd add sell let %prices% = array(%prices%, %price%)
+cmd add sell let %sells%["ids"] = %ids%
+cmd add sell let %sells%["variants"] = %variants%
+cmd add sell let %sells%["prices"] = %prices%
+cmd add sell save %sells%
+cmd add sell message %p% §aItem Added! §7(%id%:%meta% - %price%)
+cmd add sell exit
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell let %size% = size(%ids%)
+cmd add sell if %size% > 1 then goto 72
+cmd add sell message %p% §cThere is nothing in the sell list at the moment! Use /sell add <id:meta> <price> to add items to the sell list!
+cmd add sell exit
+cmd add sell let %metas% = %sells%["variants"]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell async
+cmd add sell let %index% = 0
+cmd add sell let %counter% = 0
+cmd add sell let %size% = size(%ids%)
+cmd add sell let %counter% = %counter% + 1
+cmd add sell let %index% = %index% + 1
+cmd add sell if %index% = %size% then goto 87
+cmd add sell if %size% = 0 then goto 87
+cmd add sell let %id% = %ids%[%index%]
+cmd add sell let %meta% = %metas%[%index%]
+cmd add sell let %price% = %prices%[%index%]
+cmd add sell let %list%[] = \"§7\" + %counter% + \". §a(\" + %id% + \":\" + %meta% + \") - $\" + %price%
+cmd add sell goto 78
+cmd add sell sync
+cmd add sell let %msg% = join(%list%, \"\\n\")
+cmd add sell message %p% \"§eSell List:\\n\" + %msg%
+cmd add sell exit
+cmd add sell if %status%["op"] = %true% then goto 93
+cmd add sell goto 21
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell let %size% = size(%ids%)
+cmd add sell if %size% > 1 then goto 97
+cmd add sell goto 70
+cmd add sell if varset(%args%[2]) then goto 100
+cmd add sell message %p% §cUsage: /sell remove <number> (You can find item numbers by using /sell list!)
+cmd add sell exit
+cmd add sell let %inum% = %args%[2]
+cmd add sell if %inum% > 0 then goto 104
+cmd add sell message %p% §cThis is an invalid item number! You can find valid item numbers by using /sell list and looking at the numbers on the left hand side.
+cmd add sell exit
+cmd add sell let %id% = %ids%[%inum%]
+cmd add sell if varset(%id%) then goto 107
+cmd add sell goto 102
+cmd add sell let %metas% = %sells%["variants"]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell let %meta% = %metas%[%inum%]
+cmd add sell let %price% = %prices%[%inum%]
+cmd add sell let %ids%[%inum%] =
+cmd add sell let %metas%[%inum%] =
+cmd add sell let %prices%[%inum%] =
+cmd add sell let %sells%["ids"] = array(%ids%)
+cmd add sell let %sells%["variants"] = array(%metas%)
+cmd add sell let %sells%["prices"] = array(%prices%)
+cmd add sell save %sells%
+cmd add sell message %p% §aItem Successfully Removed! §7(%id%:%meta% - %price%)
+cmd add sell exit
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell let %size% = size(%ids%)
+cmd add sell if %size% > 1 then goto 124
+cmd add sell goto 70
+cmd add sell let %metas% = %sells%["variants"]
+cmd add sell let %hand% = playerhand(%p%)
+cmd add sell let %hand%["invslot"] =
+cmd add sell let %h-id% = %hand%["id"]
+cmd add sell let %h-meta% = %hand%["variant"]
+cmd add sell if %hand%["count"] = 0 then goto 131
+cmd add sell if (%h-id% in %ids%) and (%h-meta% in %metas%) then goto 133
+cmd add sell message %p% §cThis is an unsellable item!
+cmd add sell exit
+cmd add sell let %inum% = position(%ids%, %h-id%)
+cmd add sell let %pp-meta% = %metas%[%inum%]
+cmd add sell if %pp-meta% = %h-meta% then goto 138
+cmd add sell let %ids%[%inum%] =
+cmd add sell goto 133
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell let %price% = %prices%[%inum%]
+cmd add sell let %inv% = playerinventory(%p%)
+cmd add sell async
+cmd add sell let %size% = size(%inv%)
+cmd add sell let %size% = %size% - 1
+cmd add sell if %size% = -1 then exit
+cmd add sell if %inv%[%size%] != %hand% then goto 143
+cmd add sell sync
+cmd add sell let %count% = %hand%["count"]
+cmd add sell let %name% = %hand%["name"]
+cmd add sell let %inv%[%size%] =
+cmd add sell carry %p% %inv%
+cmd add sell let %money% = %price% * %count%
+cmd add sell ascon /givemoney %p% %money%
+cmd add sell message %p% §aYou just sold §e%name% §7(%h-id%:%h-meta%) §afor §e$%money%§a!
+cmd add sell exit
+cmd add sell if %status%["op"] = %false% then goto 21
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell if (size(%ids%)) > 1 then goto 159
+cmd add sell goto 70
+cmd add sell if varset(%args%[2]) and varset(%args%[3]) then goto 162
+cmd add sell message %p% §cUsage: /sell edit <item number> <price> (You can find valid item numbers by using /sell list and looking at the numbers on the left hand side.)
+cmd add sell exit
+cmd add sell if (%args%[2] > 0) and (%args%[3] > 0) then goto 164
+cmd add sell goto 160
+cmd add sell let %inum% = %args%[2]
+cmd add sell let %newprice% = %args%[3]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell let %prices%[%inum%] = %newprice%
+cmd add sell let %sells%["prices"] = %prices%
+cmd add sell let %metas% = %sells%["variants"]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell let %meta% = %metas%[%inum%]
+cmd add sell let %price% = %prices%[%inum%]
+cmd add sell let %id% = %ids%[%inum%]
+cmd add sell save %sells%
+cmd add sell message %p% §aYou edited %inum%. §a(%id%:%meta%)'s price to: §e$%newprice%!
+cmd add sell exit
+cmd add sell if %status%["op"] = %false% then goto 21
+cmd add sell let %sells% =
+cmd add sell save %sells%
+cmd add sell message %p% §aSells Variable Resetted! (aka. sell list was cleared)
+cmd add sell exit
+cmd add sell message %p% \"==[§9Information§f]==\\n§6Creator: §eCosmicGhast\\n§2Last Edited: §a8/27/2018\\n\\n§7In order to use the command use /sell help!\\n\\n\"
+cmd add sell if %status%["op"] = %false% then exit
+cmd add sell message %p% \"§cPlease do not edit this command in anyway.\"
+cmd add sell exit
+cmd add sell message %p% \"§f-----§2Sell commands:§f-----\\n§a/sell §7- sells everything in your inventory\\n§a/sell help §7- shows all sell options\\n§a/sell hand§7 - sells player hand\\n§a/sell list §7- list all sellable items\\n§f---§eOperator Commands:§f---\\n§a/sell add <id:meta> <price> - §7adds item id and meta to the sells list\\n§a/sell remove <item number> §7- use /sell list to see item numbers!\\n§a/sell edit <item number> <price>§7- edits item price (case sensitive)\\n§a/sell reset §7- resets all command variables\\n§f---------§3More:§f---------\\n§a/sell about - §7information and credits\"
+cmd add sell exit
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell let %size% = size(%ids%)
+cmd add sell if %size% > 1 then goto 192
+cmd add sell goto 70
+cmd add sell let %metas% = %sells%["variants"]
+cmd add sell let %prices% = %sells%["prices"]
+cmd add sell let %inv% = playerinventory(%p%)
+cmd add sell async
+cmd add sell let %size% = size(%inv%)
+cmd add sell let %size% = %size% - 1
+cmd add sell let %ids% = %sells%["ids"]
+cmd add sell if %size% = -1 then goto 216
+cmd add sell let %item% = %inv%[%size%]
+cmd add sell let %id% = %item%["id"]
+cmd add sell let %meta% = %item%["variant"]
+cmd add sell if (%id% notin %ids%) or (%meta% notin %metas%) then goto 197
+cmd add sell let %inum% = position(%ids%, %id%)
+cmd add sell let %pp-meta% = %metas%[%inum%]
+cmd add sell if %pp-meta% = %meta% then goto 209
+cmd add sell let %ids%[%inum%] =
+cmd add sell goto 204
+cmd add sell let %price% = %prices%[%inum%]
+cmd add sell if varset(%fp%) = %false% then let %fp% = 0
+cmd add sell let %count% = %item%["count"]
+cmd add sell let %price% =  %price% * %count%
+cmd add sell let %fp% = %fp% + %price%
+cmd add sell let %inv%[%size%] =
+cmd add sell goto 197
+cmd add sell sync
+cmd add sell carry %p% %inv%
+cmd add sell ascon /givemoney %p% %fp%
+cmd add sell message %p% §aYou just sold your inventory for §e$%fp%!
+cmd add sell exit

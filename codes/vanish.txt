@@ -1,0 +1,11 @@
+cmd create v §e(Staff Command)
+cmd add v let %staff% = array(\"Owner\", \"SrAdmin\", \"Creator\", \"Mod\", \"SrMod\", \"Chief\", \"Admin\")
+cmd add v let %pgrp% = playergroup(%p%)
+cmd add v if %pgrp% in %staff% then goto
+cmd add v message %p% §e§k||§r §c§lS§fC §6Permissions§r §e§k||§r§d You do not have permission for this command.
+cmd add v exit
+cmd add v if %args%[1] = "vanish" then /effect %p% invisibility 10000 225
+cmd add v if %args%[1] = "vanish" then message %p% §e§k||§r §c§lS§fC §6VANISH§r §e§k||§r §dYou are now vanished!
+cmd add v exit
+cmd add v if %args%[1] = "visible" then /effect %p% clear
+cmd add v if %args%[1] = "visible" then message %p% §e§k||§r §c§lS§fC §6VANISH§r §e§k||§r §dYou are now visible!

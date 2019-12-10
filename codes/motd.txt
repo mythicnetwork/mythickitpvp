@@ -1,0 +1,3 @@
+/motd add §d§lMythic §cNetwork §6» §6KitPvP §40.2.0-beta§6!
+/motd add §d§lMythic §cNetwork §6» §6Welcome!
+/motd add §d§lMythic §cNetwork §6» §cMerry §bChristmas!

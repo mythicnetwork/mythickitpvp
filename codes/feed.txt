@@ -1,0 +1,13 @@
+cmd create feed §eFeed yourself!
+cmd add feed let %donators% = array(\"Owner\", \"SrAdmin\", \"Creator\", \"Mod\", \"SrMod\", \"Chief\", \"Admin\", \"Legend\", \"Elite\", \"Ruby\")
+cmd add feed let %pgrp% = playergroup(%p%)
+cmd add feed if %pgrp% in %donators% then goto 6
+cmd add feed message %p% §c§lS§fC§8 [§c!§8]§r §dYou do not have permission for this command.
+cmd add feed exit 
+cmd add feed let %player% = %args%[1] 
+cmd add feed if varset(%player%) then goto 8 
+cmd add feed let %status% = playerstatus(%p%) 
+cmd add feed let %saturation% = %status%["saturation"]
+cmd add feed treat %p% %health% %saturation% 20 
+cmd add feed message %p% §c§lS§fC §8[§c!§8]§r §dYou have been fed! 
+cmd add feed exit

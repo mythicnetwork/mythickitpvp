@@ -1,0 +1,57 @@
+cmd create prisongui §ePrisons GUI (§6Please use it in Prisons only!§e)
+cmd add prisongui %player% = %p%
+cmd add prisongui %gui%[\"type\"] = \"form\"
+cmd add prisongui %gui%[\"title\"] = \"§8§l[§c!§8] §6Prisons UI §cBETA\"
+cmd add prisongui %gui%[\"content\"] = \"§8§l[§c!§8]§r §dShortcuts for prisons. Use them only in Prisons!\"
+cmd add prisongui %button0%[\"text\"] = \"§6§lSell inventory\"
+cmd add prisongui %button1%[\"text\"] = \"§6§lTeleport to mine\"
+cmd add prisongui %button2%[\"text\"] = \"§6§lShop\"
+cmd add prisongui %button3%[\"text\"] = \"§6§lPay Someone\"
+cmd add prisongui %button4%[\"text\"] = \"§6Mine list\"
+cmd add prisongui %button5%[\"text\"] = \"§c§lExit\"
+cmd add prisongui %buttons%[] = %button0%
+cmd add prisongui %buttons%[] = %button1%
+cmd add prisongui %buttons%[] = %button2%
+cmd add prisongui %buttons%[] = %button3%
+cmd add prisongui %buttons%[] = %button5%
+cmd add prisongui %gui%[\"buttons\"] = %buttons%
+cmd add prisongui %response% = dialog(%player%, %gui%)
+cmd add prisongui if %response% = 0 then goto 25
+cmd add prisongui if %response% = 1 then /tpworld world
+cmd add prisongui if %response% = 2 then message §eThe Shop is currently under construction. 
+cmd add prisongui if %response% = 3 then /paymoney
+cmd add prisongui if %response% = 4 then message %p% §c§lS§fC §8[§c!§8]§r §dMine list§6 is coming soon.
+cmd add prisongui if %response% = 5 then exit
+cmd add prisongui exit
+cmd add prisongui #sellwarning
+cmd add prisongui message %p% §c§lS§fC §8[§c!§8]§r §dLoading...
+cmd add prisongui sleep 2
+cmd add prisongui %player% = %p%
+cmd add prisongui %gui%[\"type\"] = \"form\"
+cmd add prisongui %gui%[\"title\"] = \"§8§l[§c!§8] §6§lSell confirmation\"
+cmd add prisongui %gui%[\"content\"] = \"§dAre you sure you want to sell your inventory? Tap/click on Yes or No.\"
+cmd add prisongui %button0%[\"text\"] = \"§e§lYes\"
+cmd add prisongui %button1%[\"text\"] = \"§c§lNo\"
+cmd add prisongui %buttons%[] = %button0%
+cmd add prisongui %buttons%[] = %button1%
+cmd add prisongui %gui%[\"buttons\"] = %buttons%
+cmd add prisongui %response% = dialog(%player%, %gui%)
+cmd add prisongui if %response% = 0 then /sell
+cmd add prisongui if %response% = 1 then /prisongui
+cmd add prisongui exit
+cmd add prisongui #minelist
+cmd add prisongui message %p% §c§lS§fC §8[§c!§8]§r §dLoading...
+cmd add prisongui sleep 2
+cmd add prisongui %player% = %p%
+cmd add prisongui %gui%[\"type\"] = \"form\"
+cmd add prisongui %gui%[\"title\"] = \"§8§l[§c!§8] §6§lMine List\"
+cmd add prisongui %gui%[\"content\"] = \"§dSelect the corresponding mine for your rank!\"
+cmd add prisongui %button0%[\"text\"] = \"§e§lYes\"
+cmd add prisongui %button1%[\"text\"] = \"§c§lNo\"
+cmd add prisongui %buttons%[] = %button0%
+cmd add prisongui %buttons%[] = %button1%
+cmd add prisongui %gui%[\"buttons\"] = %buttons%
+cmd add prisongui %response% = dialog(%player%, %gui%)
+cmd add prisongui if %response% = 0 then /sell
+cmd add prisongui if %response% = 1 then /prisongui
+cmd add prisongui exit

@@ -1,0 +1,19 @@
+cmd create settings §eSettings UI
+cmd add settings %player% = %p% 
+cmd add settings %gui%[\"type\"] = \"form\" 
+cmd add settings %gui%[\"title\"] = \"§6User Settings\" 
+cmd add settings %gui%[\"content\"] = \"§6Disable content to customize your experience.\" 
+cmd add settings %button0%[\"text\"] = \"§6Disable §dWalkingParticles\" 
+cmd add settings %button1%[\"text\"] = \"§6Enable §dWalkingParticles\" 
+cmd add settings %button2%[\"text\"] = \"§cUnder development.\"
+cmd add settings %button3%[\"text\"] = \"§cExit\"  
+cmd add settings %buttons%[] = %button0% 
+cmd add settings %buttons%[] = %button1% 
+cmd add settings %buttons%[] = %button2% 
+cmd add settings %buttons%[] = %button3% 
+cmd add settings %gui%[\"buttons\"] = %buttons% 
+cmd add settings %response% = dialog(%player%, %gui%) 
+cmd add settings if %response% = 0 then asop /wpoff
+cmd add settings if %response% = 1 then asop /wpon
+cmd add settings if %response% = 2 then message %p% §6This feature is §cunder development§6!§r
+cmd add settings if %response% = 3 then exit

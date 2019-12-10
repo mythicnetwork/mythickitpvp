@@ -1,0 +1,68 @@
+cmd create kits A advanced kit UI made by NikosProGamer
+cmd add kits let %allowed% = array(\"YT\", \"Guest\", \"Creator\", \"God\", \"Warrior\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Voter\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %allowed% then goto 6
+cmd add kits message %p% §6You don't have permission to use this command.
+cmd add kits exit
+cmd add kits %player% = %p%
+cmd add kits %gui%[\"type\"] = \"form\"
+cmd add kits %gui%[\"title\"] = \"§6Kit UI 1.0.0\"
+cmd add kits %gui%[\"content\"] = \"§6Choose a kit! (Made by NikosProGamer)\"
+cmd add kits %button0%[\"text\"] = \"§4§lBeta§r §6Kit\"
+cmd add kits %button1%[\"text\"] = \"§6Voter Kit\"
+cmd add kits %button2%[\"text\"] = \"§6Coming Soon.§r\"
+cmd add kits %button3%[\"text\"] = \"§6Coming Soon.§r\"
+cmd add kits %button4%[\"text\"] = \"§cExit\"
+cmd add kits %buttons%[] = %button0%
+cmd add kits %buttons%[] = %button1%
+cmd add kits %buttons%[] = %button2%
+cmd add kits %buttons%[] = %button3%
+cmd add kits %buttons%[] = %button4%
+cmd add kits %gui%[\"buttons\"] = %buttons%
+cmd add kits %response% = dialog(%player%, %gui%)
+cmd add kits if %response% = 0 then goto 28
+cmd add kits if %response% = 1 then goto 38
+cmd add kits if %response% = 2 then goto 51
+cmd add kits if %response% = 3 then goto 60
+cmd add kits if %response% = 4 then goto exit
+cmd add kits exit
+cmd add kits #BetaKit
+cmd add kits let %kit1% = array(\"YT\", \"Voter\", \"Guest\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit1% then goto 34
+cmd add kits message %p% §6You don't have permission to use this command.
+cmd add kits exit
+cmd add kits asop /kitgive pvp %p%
+cmd add kits message %p% §6You have choosed §lBeta§r§6 kit!
+cmd add kits exit
+cmd add kits #VoterKit
+cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit2% then goto 43
+cmd add kits message %p% §6You don't have permission to use this command.
+cmd add kits exit
+cmd add kits ascon /give %p% 310 1
+cmd add kits ascon /give %p% 311 1
+cmd add kits ascon /give %p% 308 1
+cmd add kits ascon /give %p% 309 1
+cmd add kits ascon /give %p% 267 1 
+cmd add kits message %p% §6You have choosed §lVote§r §6kit!
+cmd add kits exit
+cmd add kits #WarriorKit
+cmd add kits let %kit3% = array(\"Warrior\", \"Creator\", \"Emperor\", \"YT\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit3% then goto 56
+cmd add kits message %p% §6You don't have permission to use this command.
+cmd add kits exit
+cmd add kits asop /kitgive warriorkit %p%
+cmd add kits message %p% §6You have choosed §lWarrior§r §6kit!
+cmd add kits exit
+cmd add kits #EmperorKit
+cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit4% then goto 65
+cmd add kits message %p% §6You don't have permission to use this command.
+cmd add kits exit
+cmd add kits asop /kitgive emperorkit %p%
+cmd add kits message %p% §6You have choosed §lEmperor§r §6kit!
+cmd add kits exit
