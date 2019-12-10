@@ -2,7 +2,7 @@ cmd create version Shows server patch & version
 cmd add version %player% = %p%
 cmd add version %gui%[\"type\"] = \"form\"
 cmd add version %gui%[\"title\"] = \"§d§lMythic §cNetwork §r§e§k||§r§c§l KitPvP §r§6version\"
-cmd add version %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.10.0§6 based on §d1.13§6.\\n§r\\n§6Running patch v§4§l0.2.0-beta§r§6 (Codename: §cC§bh§cr§bi§cs§bt§cm§ba§cs§6) based on §d§lMythic §cKitPvP §r§6core.\"
+cmd add version %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.10.0§6 based on §d1.13§6.\\n§r\\n§6Running patch v§4§l1.0.0-STABLE§r§6 (Codename: §dD-Day Update§6) based on §d§lMythic §cKitPvP §r§6core.\"
 cmd add version %button0%[\"text\"] = \"§c§lExit\"
 cmd add version %buttons%[] = %button0%
 cmd add version %gui%[\"buttons\"] = %buttons%
