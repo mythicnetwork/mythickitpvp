@@ -1,3 +1,4 @@
-/motd add §d§lMythic §cNetwork §6» §6KitPvP §40.2.0-beta§6!
+/motd add §d§lMythic §cNetwork §6» §6KitPvP §41.0.0§6!
 /motd add §d§lMythic §cNetwork §6» §6Welcome!
-/motd add §d§lMythic §cNetwork §6» §cMerry §bChristmas!
+/motd add §d§lMythic §cNetwork §6» §6D-Day is here!
+/motd add §d§lMythic §cNetwork §6» §6We are out of beta!
