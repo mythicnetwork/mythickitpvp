@@ -1,8 +1,9 @@
 cmd create changelogs Check whats added in the latest patch.
+cmd ad changelogs sleep 2
 cmd add changelogs %player% = %p%
 cmd add changelogs %gui%[\"type\"] = \"form\"
 cmd add changelogs %gui%[\"title\"] = \"§6What's new in §4§l0.2.0-beta§r§6!\"
-cmd add changelogs %gui%[\"content\"] = \"§6- The Snowstorm.\\n§6The Portal that spawned in the Lobby, opened and caused a snowstorm! All the crops are dead and the water is frozen now.\\n§r\\n§6- Voter Rank.\\n§6The Voter rank is now available! Vote to get it!\\n§r\\n§6- Some new premiun stuff is arriving soon..\\n§6The Portal has more to offer..\\n§r\\n- §cM§be§cr§br§cy §bC§ch§br§ci§bs§ct§bm§ca§bs§6!\\n§6Enjoy the snow lobby and map with more neat Christmas features being added on!\\n\\n§6- Added /report.\\n§6Now you can report a bug or a player to help us more!\"
+cmd add changelogs %gui%[\"content\"] = \"§6- D-Day is here!\\n§6The Portal brought more, and will continue to...\\n§r\\n§6- Warrior and Emperor Donator Ranks are now available!\\n§6Check /newranks to check out whats available with each ranks and prices.\\n§r\\n§6- Anti-lag steps!\\n§6The Development Team is working on making commands more anti-lag supported to make the server and your device not lag!\\n§6- We are finally out of Beta!\\n§6With the 1.0.0 release, Mythic is official out of Beta! Woohoo!\\n\\n§6- Added /staff.\\n§6Everything related to our Staff Team is now there!\"
 cmd add changelogs %button0%[\"text\"] = \"§cExit\"
 cmd add changelogs %buttons%[] = %button0%
 cmd add changelogs %gui%[\"buttons\"] = %buttons%
