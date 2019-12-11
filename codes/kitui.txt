@@ -7,12 +7,12 @@ cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits %player% = %p%
 cmd add kits %gui%[\"type\"] = \"form\"
-cmd add kits %gui%[\"title\"] = \"§6Kit UI 1.0.0\"
-cmd add kits %gui%[\"content\"] = \"§6Choose a kit! (Made by NikosProGamer)\"
-cmd add kits %button0%[\"text\"] = \"§4§lBeta§r §6Kit\"
+cmd add kits %gui%[\"title\"] = \"§6Kit UI 2.0.0\"
+cmd add kits %gui%[\"content\"] = \"§6Choose a kit to fight!\"
+cmd add kits %button0%[\"text\"] = \"§6Member Kit\"
 cmd add kits %button1%[\"text\"] = \"§6Voter Kit\"
-cmd add kits %button2%[\"text\"] = \"§6Coming Soon.§r\"
-cmd add kits %button3%[\"text\"] = \"§6Coming Soon.§r\"
+cmd add kits %button2%[\"text\"] = \"§cWarrior Kit§r\"
+cmd add kits %button3%[\"text\"] = \"§dEmperor Kit§r\"
 cmd add kits %button4%[\"text\"] = \"§cExit\"
 cmd add kits %buttons%[] = %button0%
 cmd add kits %buttons%[] = %button1%
@@ -59,7 +59,7 @@ cmd add kits asop /kitgive warriorkit %p%
 cmd add kits message %p% §6You have choosed §lWarrior§r §6kit!
 cmd add kits exit
 cmd add kits #EmperorKit
-cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"God\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %kit4% then goto 66
 cmd add kits message %p% §6You don't have permission to use this command.
