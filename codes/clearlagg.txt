@@ -1,17 +1,17 @@
 cmd create cl §eClear lagg.
-cmd add cl let %staff% = array(\"Owner\", \"SrAdmin\", \"Creator\", \"Chief\", \"Admin\")
+cmd add cl let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Admin\")
 cmd add cl let %pgrp% = playergroup(%p%)
 cmd add cl if %pgrp% in %staff% then goto 6
 cmd add cl message %p% §cYou don't have permission to use this command.
 cmd add cl exit
-cmd add cl message onlineplayers() §6ClearLagg §8§l[§c!§8] §6Clearing entities in 10 minutes.
+cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 10 minutes.
 cmd add cl sleep 300
-cmd add cl message onlineplayers() §6ClearLagg §8§l[§c!§8] §6Clearing entities in 5 minutes.
+cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 5 minutes.
 cmd add cl sleep 120
-cmd add cl message onlineplayers() §6ClearLagg §8§l[§c!§8] §6Clearing entities in 2 minutes.
+cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 2 minutes.
 cmd add cl sleep 60
-cmd add cl message onlineplayers() §6ClearLagg §8§l[§c!§8] §6Clearing entities in 1 minute.
+cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 1 minute.
 cmd add cl sleep 60
 cmd add cl ascon /lagg clear
-cmd add cl message onlineplayers() §6ClearLagg §8§l[§c!§8] §6Cleared entities.
+cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Cleared excessive entities.
 cmd add cl goto 6 
