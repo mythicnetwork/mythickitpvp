@@ -1,11 +1,18 @@
-cmd create vanish §e(Staff Command)
-cmd add vanish let %staff% = array(\"Owner\", \"Helper\", \"Developer\", \"Mod\", \"Admin\")
-cmd add vanish let %pgrp% = playergroup(%p%)
-cmd add vanish if %pgrp% in %staff% then goto
-cmd add vanish message %p% §6You do not have permission to run this command.
+cmd create vanish Staff Command!
+cmd add vanish let %status% = playerstatus(%p%)
+cmd add vanish let %op% = %status%["op"]
+cmd add vanish if %op% = %false% then message %p% §cOnly OPs can use this command!
+cmd add vanish if %op% = %false% then exit
+cmd add vanish load %vanish%
+cmd add vanish if varset(%vanish%[%p%]) = %false% then let %vanish%[%p%] = "false"
+cmd add vanish if %vanish%[%p%] = "true"  then goto 13
+cmd add vanish ascon /effect %p% invisibility 999999 1 true
+cmd add vanish message %p% §d§lMythic §cNetwork §8>§r§6 You are now vanished!
+cmd add vanish let %vanish%[%p%] = "true"
+cmd add vanish save %vanish%
 cmd add vanish exit
-cmd add vanish if %args%[1] = \"vanish\" then /effect %p% invisibility 99999 225
-cmd add vanish if %args%[1] = \"vanish\" then message %p% §d§lMythic §cNetwork §8>§r §6You are now vanished!
+cmd add vanish ascon /effect %p% clear
+cmd add vanish message %p% §d§lMythic §cNetwork §8>§r§6 You are now unvanished!
+cmd add vanish let %vanish%[%p%] = "false"
+cmd add vanish save %vanish%
 cmd add vanish exit
-cmd add vanish if %args%[1] = \"visible\" then /effect %p% clear
-cmd add vanish if %args%[1] = \"visible\" then message %p% §d§lMythic §cNetwork §8>§r §6You are now unvanished!
