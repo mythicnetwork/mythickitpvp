@@ -5,20 +5,20 @@ cmd add donating if %method% = \"iOS\" then goto 15
 cmd add donating if %method% = \"WhereItGoes\" then goto 20
 cmd add donating if %method% = \"HowItHelps\" then goto 23
 cmd add donating exit
-cmd add donating message %p% §6Please type either /donating §aAndroid §6or /donating §diOS§6.
+cmd add donating message %p% §6Please type either /donating §dAndroid §6or /donating §diOS§6.
 cmd add donating exit
 cmd add donating message %p% §6Download §aDonations for Leet.cc §6on the Google Play Store
 cmd add donating message %p% §6Enter our server IP §a Survivalcraft.survival.pe §aPort : 16859
 cmd add donating message %p% §6Select an amount, and choose enter.
 cmd add donating message %p% §6Done! Please wait while your in-game reward is sent.
 cmd add donating exit
-cmd add donating message %p% §6Download §aLeet Co-Payment App §bon the App Store
+cmd add donating message %p% §6Download §aLeet Co-Payment App §6on the App Store
 cmd add donating message %p% §6Enter our server IP §a Survivalcraft.survival.pe §aPort : 16859 
 cmd add donating message %p% §66Select an amount, and choose enter.
 cmd add donating message %p% §6Done! Please wait while your in-game reward is sent.
 cmd add donating exit 
 cmd add donating message %p% §6All donations go to our host, §aLeet.CC§6 who in turn gives us Credits, to use on Daily Fees and Plugins.
-cmd add donating message %p% §6To find out more, visit §ehttps://leet.cc/
+cmd add donating message %p% §6To find out more, visit §dhttps://leet.cc/
 cmd add donating exit
 cmd add donating message %p% §6Donating helps keep us up every day, as well as getting new Plugins for the server to make your experience even more enjoyable.
 cmd add donating exit
