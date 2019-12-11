@@ -1,3 +1,4 @@
 - /home gives internal
 - /report gives undefined variable error
 - /afk gives internal
+- Possibly Slappers when LEET releases 1.14
