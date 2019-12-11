@@ -1,13 +1,12 @@
-## How to contribute
+## Contributing
 
 You can contribute to our Network GitHub repository by making a pull request.
 
-# Pull request required info
+# Rules
 
-You must include this information on the pull request in order for us:
+Do not type non-related info in the pull request.
 
-Vulnerability in code, and describe the exact issue that's occuring.
-Code Fix pinned in pull request
-Your IGN name on Minecraft.
+Describe exactly the issue and the fix.
 
-And after you fill all that information, you can type other information that are related to the issue.
+Code must be included or we can't merge it.
+
