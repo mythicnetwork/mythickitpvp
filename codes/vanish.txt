@@ -1,11 +1,11 @@
-cmd create v §e(Staff Command)
-cmd add v let %staff% = array(\"Owner\", \"SrAdmin\", \"Creator\", \"Mod\", \"SrMod\", \"Chief\", \"Admin\")
-cmd add v let %pgrp% = playergroup(%p%)
-cmd add v if %pgrp% in %staff% then goto
-cmd add v message %p% §e§k||§r §c§lS§fC §6Permissions§r §e§k||§r§d You do not have permission for this command.
-cmd add v exit
-cmd add v if %args%[1] = "vanish" then /effect %p% invisibility 10000 225
-cmd add v if %args%[1] = "vanish" then message %p% §e§k||§r §c§lS§fC §6VANISH§r §e§k||§r §dYou are now vanished!
-cmd add v exit
-cmd add v if %args%[1] = "visible" then /effect %p% clear
-cmd add v if %args%[1] = "visible" then message %p% §e§k||§r §c§lS§fC §6VANISH§r §e§k||§r §dYou are now visible!
+cmd create vanish §e(Staff Command)
+cmd add vanish let %staff% = array(\"Owner\", \"Helper\", \"Developer\", \"Mod\", \"Admin\")
+cmd add vanish let %pgrp% = playergroup(%p%)
+cmd add vanish if %pgrp% in %staff% then goto
+cmd add vanish message %p% §6You do not have permission to run this command.
+cmd add vanish exit
+cmd add vanish if %args%[1] = \"vanish\" then /effect %p% invisibility 99999 225
+cmd add vanish if %args%[1] = \"vanish\" then message %p% §d§lMythic §cNetwork §8>§r §6You are now vanished!
+cmd add vanish exit
+cmd add vanish if %args%[1] = \"visible\" then /effect %p% clear
+cmd add vanish if %args%[1] = \"visible\" then message %p% §d§lMythic §cNetwork §8>§r §6You are now unvanished!
