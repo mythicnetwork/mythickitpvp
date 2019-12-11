@@ -1,8 +1,9 @@
 cmd create vanish Staff Command!
-cmd add vanish let %status% = playerstatus(%p%)
-cmd add vanish let %op% = %status%["op"]
-cmd add vanish if %op% = %false% then message %p% §cOnly OPs can use this command!
-cmd add vanish if %op% = %false% then exit
+cmd add vanish let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
+cmd add vanish let %pgrp% = playergroup(%p%)
+cmd add vanish if %pgrp% in %staff% then goto 6
+cmd add vanish message %p% §cYou don't have permission to use this command
+cmd add vanish exit
 cmd add vanish load %vanish%
 cmd add vanish if varset(%vanish%[%p%]) = %false% then let %vanish%[%p%] = "false"
 cmd add vanish if %vanish%[%p%] = "true"  then goto 13
