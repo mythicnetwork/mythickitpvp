@@ -1,15 +1,10 @@
-cmd edit testae 103 %player% = %p% 
-cmd edit testae 104 %form%[\"type\"] = \"custom_form\"
-cmd edit testae 105 %form%[\"title\"] = \"§6Report a bug\"
-cmd edit testae 106 %i1%[\"type\"] = \"input\"
-cmd edit testae 107 %i1%[\"text\"] = \"§6Describe your bug below.\"
-cmd edit testae 108 %i1%[\"placeholder\"] = \"§6Type here...\"
-cmd edit testae 109 %con%[] = %i1%
-cmd edit testae 110 %form%[\"content\"] = %con%
-cmd edit testae 111 %bug% = dialog(%p%, %form%)
-cmd edit testae 112 if %bug% = %false% then exit
-cmd edit testae 113 %bug% = %bug%[1]
-cmd edit testae 114 if %bug% = \"\" then exit
-cmd edit testae 115 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for testaeing a bug!.
-cmd edit testae 116 ascon /cmd add bugs %p% reported this bug: %bug%
-cmd edit testae 117 exit
+cmd create newranks Check out Emperor and Warrior!
+cmd add newranks %player% = %p%
+cmd add newranks %gui%[\"type\"] = \"form\"
+cmd add newranks %gui%[\"title\"] = \"§6New ranks!\"
+cmd add newranks %gui%[\"content\"] = \"§6Check out whats new with our newest Premiun Ranks!\\n§r\\n§c§lWarrior§r§6 Rank : A rank made for warriors. Includes §cWarrior§6 kit, /feed and a secret feature...!\\n§r\\n§6§lEmperor§r §6Rank : A rank made by Emperors. Includes Emperor kit, /feed, access to Warrior kit, /nick and access to the secret feature too...!\"
+cmd add newranks %button0%[\"text\"] = \"§cExit\"
+cmd add newranks %buttons%[] =%button0%
+cmd add newranks %gui%[\"buttons\"] = %buttons%
+cmd add newranks %response% = dialog(%player%, %gui%)
+cmd add newranks if %response% = 0 then exit
