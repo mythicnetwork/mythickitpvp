@@ -1,0 +1,2 @@
+addgroup Warrior
+addgroup Emperor
