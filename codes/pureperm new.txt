@@ -1,2 +1,4 @@
 addgroup Warrior
 addgroup Emperor
+setformat Warrior §e§l{fac_rank}{fac_name} §r{prefix}§r §c§lWARRIOR §r§d{display_name} §r: {msg}
+setformat Emperor §e§l{fac_rank}{fac_name} §r{prefix}§r §6§lEMPEROR §r§d{display_name} §r: {msg}
