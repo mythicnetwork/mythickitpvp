@@ -1,5 +1,5 @@
 cmd create kits A advanced kit UI made by NikosProGamer
-cmd add kits sleep 2
+cmd add kits sleep 1
 cmd add kits let %allowed% = array(\"YT\", \"Guest\", \"Creator\", \"God\", \"Warrior\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Voter\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %allowed% then goto 7
@@ -72,7 +72,10 @@ cmd add kits message %p% §6You have choosed §lEmperor§r §6kit!
 cmd add kits exit
 cmd add kits #GoldenKingKit(MONEY)
 cmd add kits let %money% = playerbalance(%p%)
-cmd add kits if %money% < 1000 then message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §e§lGolden King §r§6kit!
+cmd add kits if %money% > 1000 then goto 78
+cmd add kits if %money% < 1000 then goto 76
+cmd add kits message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §e§lGolden King §r§6kit!
+cmd add kits exit
 cmd add kits ascon /give %p% golden_helmet 1
 cmd add kits ascon /give %p% golden_chestplate 1
 cmd add kits ascon /give %p% golden_leggings 1
