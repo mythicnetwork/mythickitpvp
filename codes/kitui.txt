@@ -77,6 +77,6 @@ cmd add kits ascon /give %p% golden_helmet 1
 cmd add kits ascon /give %p% golden_chestplate 1
 cmd add kits ascon /give %p% golden_leggings 1
 cmd add kits ascon /give %p% golden_boots 1
-cmd add kits ascon /give %p% golden_sword 1 {enchant:{[{id:17,lvl:1}]}
+cmd add kits ascon /give %p% golden_sword 1
 cmd add kits ascon /give %p% golden_apple 12
 cmd add kits exit
