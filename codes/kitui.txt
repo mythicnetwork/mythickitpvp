@@ -7,25 +7,28 @@ cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits %player% = %p%
 cmd add kits %gui%[\"type\"] = \"form\"
-cmd add kits %gui%[\"title\"] = \"§6Kit UI 2.0.0\"
+cmd add kits %gui%[\"title\"] = \"§6Kit UI 2.1.0\"
 cmd add kits %gui%[\"content\"] = \"§6Choose a kit to fight!\"
 cmd add kits %button0%[\"text\"] = \"§6Member Kit\"
 cmd add kits %button1%[\"text\"] = \"§6Voter Kit\"
 cmd add kits %button2%[\"text\"] = \"§cWarrior Kit§r\"
 cmd add kits %button3%[\"text\"] = \"§dEmperor Kit§r\"
-cmd add kits %button4%[\"text\"] = \"§cExit\"
+cmd add kits %button4%[\"text\"] = \"§6Golden King Kit§r §6c- §4§lBETA\"
+cmd add kits %button5%[\"text\"] = \"§cExit\"
 cmd add kits %buttons%[] = %button0%
 cmd add kits %buttons%[] = %button1%
 cmd add kits %buttons%[] = %button2%
 cmd add kits %buttons%[] = %button3%
 cmd add kits %buttons%[] = %button4%
+cmd add kits %buttons%[] = %button5%
 cmd add kits %gui%[\"buttons\"] = %buttons%
 cmd add kits %response% = dialog(%player%, %gui%)
-cmd add kits if %response% = 0 then goto 29
-cmd add kits if %response% = 1 then goto 39
-cmd add kits if %response% = 2 then goto 52
-cmd add kits if %response% = 3 then goto 61
-cmd add kits if %response% = 4 then goto exit
+cmd add kits if %response% = 0 then goto 33
+cmd add kits if %response% = 1 then goto 42
+cmd add kits if %response% = 2 then goto 55
+cmd add kits if %response% = 3 then goto 64
+cmd add kits if %response% = 4 then goto 73
+cmd add kits if %response% = 5 then goto exit
 cmd add kits exit
 cmd add kits #BetaKit
 cmd add kits let %kit1% = array(\"YT\", \"Voter\", \"Guest\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
@@ -34,7 +37,7 @@ cmd add kits if %pgrp% in %kit1% then goto 35
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive pvp %p%
-cmd add kits message %p% §6You have choosed §lBeta§r§6 kit!
+cmd add kits message %p% §6You have choosed §l§6Member§r §6kit!
 cmd add kits exit
 cmd add kits #VoterKit
 cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
@@ -66,4 +69,13 @@ cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive emperorkit %p%
 cmd add kits message %p% §6You have choosed §lEmperor§r §6kit!
+cmd add kits exit
+cmd add kits #GoldenKingKit(MONEY)
+cmd add kits let %money% = playerbalance(%p%)
+cmd add kits if %money% < 1000 then message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §e§lGolden King §r§6kit!
+cmd add kits ascon /give %p% golden_helmet 1
+cmd add kits ascon /give %p% golden_chestplate 1
+cmd add kits ascon /give %p% golden_leggings 1
+cmd add kits ascon /give %p% golden_sword {enchant:{[{id:17,lvl:1}]}
+cmd add kits ascon /give %p% golden_apple 12
 cmd add kits exit
