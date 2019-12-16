@@ -1,5 +1,5 @@
 cmd create changelogs Check whats added in the latest patch.
-cmd ad changelogs sleep 2
+cmd add changelogs sleep 2
 cmd add changelogs %player% = %p%
 cmd add changelogs %gui%[\"type\"] = \"form\"
 cmd add changelogs %gui%[\"title\"] = \"§6What's new in §4§l0.2.0-beta§r§6!\"
