@@ -33,7 +33,7 @@ cmd add kits exit
 cmd add kits #BetaKit
 cmd add kits let %kit1% = array(\"YT\", \"Voter\", \"Guest\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit1% then goto 35
+cmd add kits if %pgrp% in %kit1% then goto 38
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive pvp %p%
@@ -42,7 +42,7 @@ cmd add kits exit
 cmd add kits #VoterKit
 cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit2% then goto 44
+cmd add kits if %pgrp% in %kit2% then goto 47
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits ascon /give %p% 310 1
@@ -55,7 +55,7 @@ cmd add kits exit
 cmd add kits #WarriorKit
 cmd add kits let %kit3% = array(\"Warrior\", \"Creator\", \"Emperor\", \"YT\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit3% then goto 57
+cmd add kits if %pgrp% in %kit3% then goto 60
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive warriorkit %p%
@@ -64,7 +64,7 @@ cmd add kits exit
 cmd add kits #EmperorKit
 cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"God\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit4% then goto 66
+cmd add kits if %pgrp% in %kit4% then goto 69
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive emperorkit %p%
@@ -72,10 +72,12 @@ cmd add kits message %p% §6You have choosed §lEmperor§r §6kit!
 cmd add kits exit
 cmd add kits #GoldenKingKit(MONEY)
 cmd add kits let %money% = playerbalance(%p%)
-cmd add kits if %money% > 1000 then goto 78
+cmd add kits if %money% > 1000 then goto 79
+cmd add kits if %money% = 1000 then goto 79
 cmd add kits if %money% < 1000 then goto 76
 cmd add kits message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §e§lGolden King §r§6kit!
 cmd add kits exit
+cmd add kits ascon /takemoney 1000 %p% 
 cmd add kits ascon /give %p% golden_helmet 1
 cmd add kits ascon /give %p% golden_chestplate 1
 cmd add kits ascon /give %p% golden_leggings 1
