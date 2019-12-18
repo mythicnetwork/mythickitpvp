@@ -1,4 +1,4 @@
-# mythicnetwork
+# Mythic Network
 The Official Mythic Network Coding Repository.
 
 This is the dev branch and upcoming features are uploaded here.

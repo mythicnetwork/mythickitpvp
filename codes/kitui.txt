@@ -29,11 +29,17 @@ cmd add kits if %response% = 2 then goto 55
 cmd add kits if %response% = 3 then goto 64
 cmd add kits if %response% = 4 then goto 73
 cmd add kits if %response% = 5 then goto exit
+cmd add kits if %response% = 0 then goto 29
+cmd add kits if %response% = 1 then goto 39
+cmd add kits if %response% = 2 then goto 52
+cmd add kits if %response% = 3 then goto 61
+cmd add kits if %response% = 4 then goto exit
 cmd add kits exit
 cmd add kits #BetaKit
 cmd add kits let %kit1% = array(\"YT\", \"Voter\", \"Guest\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %kit1% then goto 38
+cmd add kits if %pgrp% in %kit1% then goto 35
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive pvp %p%
@@ -43,6 +49,7 @@ cmd add kits #VoterKit
 cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %kit2% then goto 47
+cmd add kits if %pgrp% in %kit2% then goto 44
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits ascon /give %p% 310 1
@@ -56,6 +63,7 @@ cmd add kits #WarriorKit
 cmd add kits let %kit3% = array(\"Warrior\", \"Creator\", \"Emperor\", \"YT\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %kit3% then goto 60
+cmd add kits if %pgrp% in %kit3% then goto 57
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive warriorkit %p%
@@ -65,6 +73,7 @@ cmd add kits #EmperorKit
 cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"God\")
 cmd add kits let %pgrp% = playergroup(%p%)
 cmd add kits if %pgrp% in %kit4% then goto 69
+cmd add kits if %pgrp% in %kit4% then goto 66
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive emperorkit %p%
