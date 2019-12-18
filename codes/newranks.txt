@@ -1,0 +1,10 @@
+cmd create newranks Check out Emperor and Warrior!
+cmd add newranks %player% = %p%
+cmd add newranks %gui%[\"type\"] = \"form\"
+cmd add newranks %gui%[\"title\"] = \"§6New ranks!\"
+cmd add newranks %gui%[\"content\"] = \"§6Check out whats new with our newest Premiun Ranks!\\n§r\\n§c§lWarrior§r§6 Rank : A rank made for warriors. Includes §cWarrior§6 kit, /feed, /setprefix and a secret feature...!\\n§r\\n§6§lEmperor§r §6Rank : A rank made by Emperors. Includes Emperor kit, /feed, access to Warrior kit, /nick, /setprefix and access to the secret feature too...!\"
+cmd add newranks %button0%[\"text\"] = \"§cExit\"
+cmd add newranks %buttons%[] =%button0%
+cmd add newranks %gui%[\"buttons\"] = %buttons%
+cmd add newranks %response% = dialog(%player%, %gui%)
+cmd add newranks if %response% = 0 then exit

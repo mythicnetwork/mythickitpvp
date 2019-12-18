@@ -1,2 +1,2 @@
-/bc add §d§lMythic §cNetwork §8[§c!§8]§r §6Welcome to the KitPvP §4Beta§r§6!
-/bc add §d§lMythic §cNetwork §8[§c!§8]§r §6The §60.2.0-beta§r §cC§bh§cr§bi§cs§bt§cm§ba§cs§6 just dropped. Check what's new on §dDiscord §6or §d/changelogs§6.
+/bc add §d§lMythic §cNetwork §8[§c!§8]§r §6Welcome to KitPvP§r§6!
+/bc add §d§lMythic §cNetwork §8[§c!§8]§r §6The §61.0.0§r §cD-Day§6 Update just dropped. Check what's new on §dDiscord §6or §d/changelogs§6.

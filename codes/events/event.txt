@@ -1,0 +1,19 @@
+cmd create events Event Beta UI
+cmd add events %player% = %p%
+cmd add events %gui%[\"type\"] = \"form\"
+cmd add events %gui%[\"title\"] = \"§c§lNEW!§r§e§k||§r §6Events §cBeta\"
+cmd add events %gui%[\"content\"] = \"§6Welcome to the Events UI! Here we will list all upcoming server events!\"
+cmd add events %button0%[\"text\"] = \"§d§lUHC Meetup §c(SOON!)§r\"
+cmd add events %button1%[\"text\"] = \"§6Coming Soon.\"
+cmd add events %button2%[\"text\"] = \"§6Coming Soon.\"
+cmd add events %button3%[\"text\"] = \"§cExit\"
+cmd add events %buttons%[] =%button0%
+cmd add events %buttons%[] = %button1%
+cmd add events %buttons%[] = %button2%
+cmd add events %buttons%[] = %button3%
+cmd add events %gui%[\"buttons\"] = %buttons%
+cmd add events %response% = dialog(%player%, %gui%)
+cmd add events if %response% = 0 then message %p% §d§lUHC Meetup §6will be held soon! Stay tuned for updates!
+cmd add events if %response% = 1 then message %p% §6New event is coming soon!
+cmd add events if %response% = 2 then message %p% §6New event is coming soon!
+cmd add events if %response% = 3 then exit

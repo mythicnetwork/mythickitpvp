@@ -1,7 +1,7 @@
 cmd edit report 1 %player% = %p%
 cmd edit report 2 %gui%[\"type\"] = \"form\"
 cmd edit report 3 %gui%[\"title\"] = \"§6Report UI 1.0.0-beta\"
-cmd edit report 4 %gui%[\"content\"] = \"§6What would you like to report?\\nP.s Do not click on the bug report option because it will freeze the /report command making you re-log to make it work again.\"
+cmd edit report 4 %gui%[\"content\"] = \"§6What would you like to report?\"
 cmd edit report 5 %button0%[\"text\"] = \"§dA player\"
 cmd edit report 6 %button1%[\"text\"] = \"§dA bug\"
 cmd edit report 7 %button2%[\"text\"] = \"§cExit\"
@@ -48,10 +48,8 @@ cmd edit report 109 %i1%[\"text\"] = \"§6Describe your bug below.\"
 cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type here...\"
 cmd edit report 111 %con%[] = %i1%
 cmd edit report 112 %form%[\"content\"] = %con%
-cmd edit report 113 %res% = dialog(%p%, %form%)
-cmd edit report 114 if %res% = %false% then exit
-cmd edit report 115 %res% = %res%[1]
-cmd edit report 116 if %res% = \"\" then exit
-cmd edit report 117 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!.
-cmd edit report 118 ascon /cmd add bugs %p% reported this bug: %res%
-cmd edit report 119 exit
+cmd edit report 113 %response% = dialog(%p%, %form%)
+cmd edit report 114 if %response% = \"\" then exit
+cmd edit report 115 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!
+cmd edit report 116 ascon /cmd add bugs %p% reported this bug: %response%
+cmd edit report 117 exit

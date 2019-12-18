@@ -1,6 +1,6 @@
 cmd create stats Shows a person or players stats! 
 cmd add stats %player% = %args%[1]
-cmd add stats if %args%[1] = "" then let %player% = %p% 
+cmd add stats if %args%[1] = \"\" then let %player% = %p% 
 cmd add stats let %phand% = playerhand(%player%)
 cmd add stats let %bal% = playerbalance(%player%) 
 cmd add stats let %r% = playergroup(%player%)

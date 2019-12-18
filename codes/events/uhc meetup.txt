@@ -1,0 +1,18 @@
+if %args%[1] = "stop" then goto 14
+if %args%[1] = "start" then goto 10
+exit
+load %hls%
+if %hls%[%p%] != %true% then exit
+let %hlt% = %health%
+if %health% = %hlt% then goto 9
+treat %p% %hlt%
+sleep 1
+goto 4
+load %hls%
+let %hls%[%p%] = %true%
+save %hls%
+goto 4
+load %hls%
+let %hls%[%p%] = %false%
+save %hls%
+exit
