@@ -1,20 +1,21 @@
-cmd create banui Ban UI 1.0.0
-cmd edit banui 1 let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
-cmd edit banui 2 let %pgrp% = playergroup(%p%)
-cmd edit banui 3 if %pgrp% in %staff% then goto 6
-cmd edit banui 4 message %p% §cYou don't have permission to use this command.
-cmd edit banui 5 exit
-cmd edit banui 6 let %player% = %p%
-cmd edit banui 7 if varset(%args%[1]) then %player% = %args%[1]
-cmd edit banui 6 %all% = onlineplayers()
+cmd create banui Ban UI 1.1.0
+cmd edit banui 1 sleep 1
+cmd edit banui 2 let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
+cmd edit banui 3 let %pgrp% = playergroup(%p%)
+cmd edit banui 4 if %pgrp% in %staff% then goto 7
+cmd edit banui 5 message %p% §6You don't have permission to use this command.
+cmd edit banui 6 exit
+cmd edit banui 7 let %player% = %p%
+cmd edit banui 8 if varset(%args%[1]) then %player% = %args%[1]
+cmd edit banui 9 %all% = onlineplayers()
 cmd edit banui 31 let %form%[\"type\"] = \"custom_form\"
 cmd edit banui 32 let %form%[\"title\"] = \"§6Ban UI 1.0.0\"
 cmd edit banui 35 let %item1%[\"type\"] = \"dropdown\"
 cmd edit banui 36 let %item1%[\"text\"] = \"§6Select a player to ban.\"
 cmd edit banui 37 let %item1%[\"options\"] = %all%
 cmd edit banui 38 let %item2%[\"type\"] = \"input\"
-cmd edit banui 39 let %item2%[\"text\"] = \"§6Ban Reason\"
-cmd edit banui 41 let %item2%[\"placeholder\"] = \"Reason\"
+cmd edit banui 39 let %item2%[\"text\"] = \"§6Type the reason why you are banning this person.\\n§6False ban reason may result to removal from the Staff Team.\"
+cmd edit banui 41 let %item2%[\"placeholder\"] = \"Type here...\"
 cmd edit banui 53 let %content%[] = %item1%
 cmd edit banui 54 let %content%[] = %item2%
 cmd edit banui 58 let %form%[\"content\"] = %content%
@@ -26,4 +27,4 @@ cmd edit banui 64 %reason% = %response%[1]
 cmd edit banui 65 if varset(%name%) and varset(%reason%) then goto 100
 cmd edit banui 66 exit
 cmd edit banui 100 /ban %name% %reason%
-cmd edit banui 101 message onlineplayers() §d§lMythic §cNetwork§6 »§r§d %name%§6 was banned by §d%p%§6 for §d%reason%§6.
+cmd edit banui 101 message onlineplayers() §d§lMythic §cNetwork§6 »§r §d%name% §6was banned by §d%p%§6 for §d%reason%§6.
