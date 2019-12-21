@@ -3,7 +3,7 @@ cmd add version sleep 1
 cmd add version %player% = %p%
 cmd add version %gui%[\"type\"] = \"form\"
 cmd add version %gui%[\"title\"] = \"§6§lKitPvP version\"
-cmd add version %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.11.9+DEV§6 based on §d1.14-1.14.1§6.\\n§r\\n§6Running patch v§4§l1.1.0-STABLE§r §6based on §d§lMythic §cKitPvP §r§6core.\"
+cmd add version %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.11.9+DEV§6 based on §d1.14-1.14.1§6.\\n§r\\n§6Running patch v§4§l1.1.0 Stable§r §6based on §d§lMythic §cKitPvP §r§6core.\"
 cmd add version %button0%[\"text\"] = \"§c§lExit\"
 cmd add version %buttons%[] = %button0%
 cmd add version %gui%[\"buttons\"] = %buttons%
