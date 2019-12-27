@@ -3,7 +3,7 @@ cmd add network sleep 1
 cmd add network %player% = %p%
 cmd add network %gui%[\"type\"] = \"form\"
 cmd add network %gui%[\"title\"] = \"§6Network Status\"
-cmd add network %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\n§6Network Core - §e§lSTABLE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions - §c§lDEV ONLINE§r\"
+cmd add network %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\n§6Network Core - §e§lSTABLE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions §cBeta §6- §e§lONLINE§r\"
 cmd add network %button0%[\"text\"] = \"§cExit\"
 cmd add network %buttons%[] = %button0%
 cmd add network %gui%[\"buttons\"] = %buttons%
