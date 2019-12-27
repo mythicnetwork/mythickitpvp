@@ -1,0 +1,396 @@
+cmd create eshop Enchant Shop
+cmd add eshop %money% = playerbalance(%p%)
+cmd add eshop %player% = %p%
+cmd add eshop %gui%[\"type\"] = \"form\"
+cmd add eshop %gui%[\"title\"] = \"§b§lEnchant shop§r\"
+cmd add eshop %gui%[\"content\"] = \"§e§lSelect an enchants§r\"
+cmd add eshop %opt0%[\"text\"] = \"§c§lClose§r\"
+cmd add eshop %opt1%[\"text\"] = \"§6§lFire Protection§r\"
+cmd add eshop %opt2%[\"text\"] = \"§8§lEfficiency§r\"
+cmd add eshop %opt3%[\"text\"] = \"§e§lProjectiles Protection§r\"
+cmd add eshop %opt4%[\"text\"] = \"§b§lUnbreaking§r\"
+cmd add eshop %opt5%[\"text\"] = \"§l§aKnockBack§r\"
+cmd add eshop %opt6%[\"text\"] = \"§d§lProtection§r\"
+cmd add eshop %opt7%[\"text\"] = \"§4§lSharpness§r\"
+cmd add eshop %opt8%[\"text\"] = \"§6§lPunch§r\"
+cmd add eshop %opt9%[\"text\"] = \"§a§lPower§r\"
+cmd add eshop %opt10%[\"text\"] = \"§c§lFire §6Aspect§r\"
+cmd add eshop %opt11%[\"text\"] = \"§e§lInfinity§r\"
+cmd add eshop %opt12%[\"text\"] = \"§e§lthorns§r\"
+cmd add eshop %buttons%[] = %opt0%
+cmd add eshop %buttons%[] = %opt1%
+cmd add eshop %buttons%[] = %opt2%
+cmd add eshop %buttons%[] = %opt3%
+cmd add eshop %buttons%[] = %opt4%
+cmd add eshop %buttons%[] = %opt5%
+cmd add eshop %buttons%[] = %opt6%
+cmd add eshop %buttons%[] = %opt7%
+cmd add eshop %buttons%[] = %opt8%
+cmd add eshop %buttons%[] = %opt9%
+cmd add eshop %buttons%[] = %opt10%
+cmd add eshop %buttons%[] = %opt11%
+cmd add eshop %buttons%[] = %opt12%
+cmd add eshop %gui%[\"buttons\"] = %buttons%
+cmd add eshop %response% = dialog(%player%, %gui%)
+cmd add eshop if varset(%response%) = %false% then exit
+cmd add eshop if %response% = 0 then exit
+cmd add eshop if %response% = 1 then goto 100
+cmd add eshop if %response% = 2 then goto 200
+cmd add eshop if %response% = 3 then goto 300
+cmd add eshop if %response% = 4 then goto 400
+cmd add eshop if %response% = 5 then goto 500
+cmd add eshop if %response% = 6 then goto 600
+cmd add eshop if %response% = 7 then goto 700
+cmd add eshop if %response% = 8 then goto 800
+cmd add eshop if %response% = 9 then goto 900
+cmd add eshop if %response% = 10 then goto 1000
+cmd add eshop if %response% = 11 then goto 1100
+cmd add eshop if %response% = 12 then goto 1200
+cmd add eshop exit
+
+
+cmd insert eshop 100 %gui1%[\"type\"] = \"form\"
+cmd add eshop %gui1%[\"title\"] = \"§6§lfire protection§r\"
+cmd add eshop %gui1%[\"content\"] = \"§lSelect a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§6§lFire Protection Level IV §r- §f$5000§r\"
+cmd add eshop %levels1%[] = %cancel%
+cmd add eshop %levels1%[] = %level1%
+cmd add eshop %gui1%[\"buttons\"] = %levels1%
+cmd add eshop %response1% = dialog(%player%, %gui1%)
+cmd add eshop if varset(%response1%) = %false% then exit
+cmd add eshop if %response1% = 5000 then exit
+cmd add eshop if %response1% = 1 then goto 125
+cmd add eshop exit
+cmd insert eshop 125 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% fire_protection 4
+cmd add eshop exit
+
+
+cmd insert eshop 200 %gui2%[\"type\"] = \"form\"
+cmd add eshop %gui2%[\"title\"] = \"§8§lEfficiency§r\"
+cmd add eshop %gui2%[\"content\"] = \"§lSelect a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§8§lEfficiency Level V §r- §f$10000§r\"
+cmd add eshop %levels2%[] = %cancel%
+cmd add eshop %levels2%[] = %level1%
+cmd add eshop %gui2%[\"buttons\"] = %levels2%
+cmd add eshop %response2% = dialog(%player%, %gui2%)
+cmd add eshop if varset(%response2%) = %false% then exit
+cmd add eshop if %response2% = 10000 then exit
+cmd add eshop if %response2% = 1 then goto 225
+cmd add eshop exit
+cmd insert eshop 225 if %money% < 10000 then message %player% §fYou need at least $10000 for this enchant.
+cmd add eshop if %money% < 10000 then exit
+cmd add eshop ascon /takemoney %player% 10000
+cmd add eshop ascon /enchant %player% efficiency 5
+cmd add eshop exit
+
+
+cmd insert eshop 300 %gui3%[\"type\"] = \"form\"
+cmd add eshop %gui3%[\"title\"] = \"§e§l Projectiles Protection§r\"
+cmd add eshop %gui3%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§e§lProjectile Protection Level IV §r- §f$5000§r\"
+cmd add eshop %levels3%[] = %cancel%
+cmd add eshop %levels3%[] = %level1%
+cmd add eshop %gui3%[\"buttons\"] = %levels3%
+cmd add eshop %response3% = dialog(%player%, %gui3%)
+cmd add eshop if varset(%response3%) = %false% then exit
+cmd add eshop if %response3% = 5000 then exit
+cmd add eshop if %response3% = 1 then goto 325
+cmd add eshop exit
+cmd edit eshop 325 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% projectile_protection 4
+cmd add eshop exit
+
+
+cmd insert eshop 400 %gui4%[\"type\"] = \"form\"
+cmd add eshop %gui4%[\"title\"] = \"§b§lUnbreaking§r\"
+cmd add eshop %gui4%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§b§lUnbreaking Level I §r- §f$1000§r\"
+cmd add eshop %level2%[\"text\"] = \"§b§lUnbreaking Level II §r- §f$2000§r\"
+cmd add eshop %level3%[\"text\"] = \"§b§lUnbreaking Level III §r- §f$5000§r\"
+cmd add eshop %levels4%[] = %cancel%
+cmd add eshop %levels4%[] = %level1%
+cmd add eshop %levels4%[] = %level2%
+cmd add eshop %levels4%[] = %level3%
+cmd add eshop %gui4%[\"buttons\"] = %levels4%
+cmd add eshop %response4% = dialog(%player%, %gui4%)
+cmd add eshop if varset(%response4%) = %false% then exit
+cmd add eshop if %response4% = 0 then exit
+cmd add eshop if %response4% = 1 then goto 425
+cmd add eshop if %response4% = 2 then goto 450
+cmd add eshop if %response4% = 3 then goto 475
+cmd add eshop exit
+cmd insert eshop 425 if %money% < 1000 then message %player% §fYou need at least $1000 for this enchant.
+cmd add eshop if %money% < 1000 then exit
+cmd add eshop ascon /takemoney %player% 1000
+cmd add eshop ascon /enchant %player% unbreaking 1
+cmd add eshop exit
+cmd insert eshop 450 if %money% < 2000 then message %player% §fYou need at least $2000 for this enchant.
+cmd add eshop if %money% < 2000 then exit
+cmd add eshop ascon /takemoney %player% 2000
+cmd add eshop ascon /enchant %player% unbreaking 2
+cmd add eshop exit
+cmd insert eshop 475 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% unbreaking 3
+cmd add eshop exit
+
+
+cmd insert eshop 500 %gui5%[\"type\"] = \"form\"
+cmd add eshop %gui5%[\"title\"] = \"§l§aKnock back§r\"
+cmd add eshop %gui5%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§l§aKnockback Level I §r- §f$3000§r\"
+cmd add eshop %level2%[\"text\"] = \"§l§aKnockback Level II §r- §f$10000§r\"
+cmd add eshop %levels5%[] = %cancel%
+cmd add eshop %levels5%[] = %level1%
+cmd add eshop %levels5%[] = %level2%
+cmd add eshop %gui5%[\"buttons\"] = %levels5%
+cmd add eshop %response5% = dialog(%player%, %gui5%)
+cmd add eshop if varset(%response5%) = %false% then exit
+cmd add eshop if %response5% = 0 then exit
+cmd add eshop if %response5% = 1 then goto 525
+cmd add eshop if %response5% = 2 then goto 550
+cmd add eshop exit
+cmd insert eshop 525 if %money% < 3000 then message %player% §fYou need at least $3000 for this enchant.
+cmd add eshop if %money% < 3000 then exit
+cmd add eshop ascon /takemoney %player% 3000
+cmd add eshop ascon /enchant %player% knockback 1
+cmd add eshop exit
+cmd insert eshop 550 if %money% < 10000 then message %player% §fYou need at least $10000 for this enchant.
+cmd add eshop if %money% < 10000 then exit
+cmd add eshop ascon /takemoney %player% 10000
+cmd add eshop ascon /enchant %player% knockback 2
+cmd add eshop exit
+
+
+cmd insert eshop 600 %gui6%[\"type\"] = \"form\"
+cmd add eshop %gui6%[\"title\"] = \"§d§lProtection§r\"
+cmd add eshop %gui6%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§d§lProtection Level II §r- §f$3000§r\"
+cmd add eshop %level2%[\"text\"] = \"§d§lProtection Level III §r- §f$5000§r\"
+cmd add eshop %level3%[\"text\"] = \"§d§lProtection Level IV §r- §f$10000§r\"
+cmd add eshop %levels6%[] = %cancel%
+cmd add eshop %levels6%[] = %level1%
+cmd add eshop %levels6%[] = %level2%
+cmd add eshop %levels6%[] = %level3%
+cmd add eshop %gui6%[\"buttons\"] = %levels6%
+cmd add eshop %response6% = dialog(%player%, %gui6%)
+cmd add eshop if varset(%response6%) = %false% then exit
+cmd add eshop if %response6% = 0 then exit
+cmd add eshop if %response6% = 1 then goto 625
+cmd add eshop if %response6% = 2 then goto 650
+cmd add eshop if %response6% = 3 then goto 675
+cmd add eshop exit
+cmd insert eshop 625 if %money% < 3000 then message %player% §fYou need at least $3000 for this enchant.
+cmd add eshop if %money% < 3000 then exit
+cmd add eshop ascon /takemoney %player% 3000
+cmd add eshop ascon /enchant %player% protection 2
+cmd add eshop exit
+cmd insert eshop 650 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% protection 3
+cmd add eshop exit
+cmd insert eshop 675 if %money% < 10000 then message %player% §fYou need at least $10000 for this enchant.
+cmd add eshop if %money% < 10000 then exit
+cmd add eshop ascon /takemoney %player% 10000
+cmd add eshop ascon /enchant %player% protection 4
+cmd add eshop exit
+
+
+cmd insert eshop 700 %gui7%[\"type\"] = \"form\"
+cmd add eshop %gui7%[\"title\"] = \"§4§lSharpness§r\"
+cmd add eshop %gui7%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§4§lSharpness Level III §r- §f$5000§r\"
+cmd add eshop %level2%[\"text\"] = \"§4§lSharpness Level IV §r- §f$10000§r\"
+cmd add eshop %level3%[\"text\"] = \"§4§lSharpness Level V §r- §f$20000§r\"
+cmd add eshop %levels7%[] = %cancel%
+cmd add eshop %levels7%[] = %level1%
+cmd add eshop %levels7%[] = %level2%
+cmd add eshop %levels7%[] = %level3%
+cmd add eshop %gui7%[\"buttons\"] = %levels7%
+cmd add eshop %response7% = dialog(%player%, %gui7%)
+cmd add eshop if varset(%response7%) = %false% then exit
+cmd add eshop if %response7% = 0 then exit
+cmd add eshop if %response7% = 1 then goto 725
+cmd add eshop if %response7% = 2 then goto 750
+cmd add eshop if %response7% = 3 then goto 775
+cmd add eshop exit
+cmd insert eshop 725 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% sharpness 3
+cmd add eshop exit
+cmd insert eshop 750 if %money% < 10000 then message %player% §fYou need at least $10000 for this enchant.
+cmd add eshop if %money% < 10000 then exit
+cmd add eshop ascon /takemoney %player% 10000
+cmd add eshop ascon /enchant %player% sharpness 4
+cmd add eshop exit
+cmd insert eshop 775 if %money% < 20000 then message %player% §fYou need at least $20000 for this enchant.
+cmd add eshop if %money% < 20000 then exit
+cmd add eshop ascon /takemoney %player% 20000
+cmd add eshop ascon /enchant %player% sharpness 5
+cmd add eshop exit
+
+
+cmd insert eshop 800 %gui8%[\"type\"] = \"form\"
+cmd add eshop %gui8%[\"title\"] = \"§6§lPunch§r\"
+cmd add eshop %gui8%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§6§lPunch Level I §r- §f$2000§r\"
+cmd add eshop %level2%[\"text\"] = \"§6§lPunch Level II §r- §f$3000§r\"
+cmd add eshop %levels8%[] = %cancel%
+cmd add eshop %levels8%[] = %level1%
+cmd add eshop %levels8%[] = %level2%
+cmd add eshop %gui8%[\"buttons\"] = %levels8%
+cmd add eshop %response8% = dialog(%player%, %gui8%)
+cmd add eshop if varset(%response8%) = %false% then exit
+cmd add eshop if %response8% = 0 then exit
+cmd add eshop if %response8% = 1 then goto 850
+cmd add eshop if %response8% = 2 then goto 875
+cmd add eshop exit
+cmd insert eshop 850 if %money% < 2000 then message %player% §fYou need at least $2000 for this enchant.
+cmd add eshop if %money% < 2000 then exit
+cmd add eshop ascon /takemoney %player% 2000
+cmd add eshop ascon /enchant %player% punch 1
+cmd add eshop exit
+cmd insert eshop 875 if %money% < 3000 then message %player% §fYou need at least $3000 for this enchant.
+cmd add eshop if %money% < 3000 then exit
+cmd add eshop ascon /takemoney %player% 3000
+cmd add eshop ascon /enchant %player% punch 2
+cmd add eshop exit
+
+
+cmd insert eshop 900 %gui9%[\"type\"] = \"form\"
+cmd add eshop %gui9%[\"title\"] = \"§a§lPower§r\"
+cmd add eshop %gui9%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§a§lPower Level III §r- §f$1000§r\"
+cmd add eshop %level2%[\"text\"] = \"§a§lPower Level IV §r- §f$3000§r\"
+cmd add eshop %level3%[\"text\"] = \"§a§lPower Level V §r- §f$5000§r\"
+cmd add eshop %levels9%[] = %cancel%
+cmd add eshop %levels9%[] = %level1%
+cmd add eshop %levels9%[] = %level2%
+cmd add eshop %levels9%[] = %level3%
+cmd add eshop %gui9%[\"buttons\"] = %levels9%
+cmd add eshop %response9% = dialog(%player%, %gui9%)
+cmd add eshop if varset(%response9%) = %false% then exit
+cmd add eshop if %response9% = 0 then exit
+cmd add eshop if %response9% = 1 then goto 925
+cmd add eshop if %response9% = 2 then goto 950
+cmd add eshop if %response9% = 3 then goto 975
+cmd add eshop exit
+cmd insert eshop 925 if %money% < 1000 then message %player% §fYou need at least $1000 for this enchant.
+cmd add eshop if %money% < 1000 then exit
+cmd add eshop ascon /takemoney %player% 1000
+cmd add eshop ascon /enchant %player% power 3
+cmd add eshop exit
+cmd insert eshop 950 if %money% < 3000 then message %player% §fYou need at least $3000 for this enchant.
+cmd add eshop if %money% < 3000 then exit
+cmd add eshop ascon /takemoney %player% 3000
+cmd add eshop ascon /enchant %player% power 4
+cmd add eshop exit
+cmd insert eshop 975 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% power 5
+cmd add eshop exit
+
+
+
+cmd insert eshop 1000 %gui10%[\"type\"] = \"form\"
+cmd add eshop %gui10%[\"title\"] = \"§c§lFire §6Aspect§r\"
+cmd add eshop %gui10%[\"content\"] = \"§f§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§c§lFire §6Aspect Level I §r- §f$10000§r\"
+cmd add eshop %level2%[\"text\"] = \"§c§lFire §6Aspect Level II §r- §f$20000§r\"
+cmd add eshop %levels10%[] = %cancel%
+cmd add eshop %levels10%[] = %level1%
+cmd add eshop %levels10%[] = %level2%
+cmd add eshop %gui10%[\"buttons\"] = %levels10%
+cmd add eshop %response10% = dialog(%player%, %gui10%)
+cmd add eshop if varset(%response10%) = %false% then exit
+cmd add eshop if %response10% = 0 then exit
+cmd add eshop if %response10% = 1 then goto 1050
+cmd add eshop if %response10% = 2 then goto 1075
+cmd add eshop exit
+cmd insert eshop 1050 if %money% < 10000 then message %player% §fYou need at least $10000 for this enchant.
+cmd add eshop if %money% < 10000 then exit
+cmd add eshop ascon /takemoney %player% 10000
+cmd add eshop ascon /enchant %player% fire_aspect 1
+cmd add eshop exit
+cmd insert eshop 1075 if %money% < 20000 then message %player% §fYou need at least $20000 for this enchant.
+cmd add eshop if %money% < 20000 then exit
+cmd add eshop ascon /takemoney %player% 20000
+cmd add eshop ascon /enchant %player% fire_aspect 2
+cmd add eshop exit
+
+
+
+cmd insert eshop 1100 %gui11%[\"type\"] = \"form\"
+cmd add eshop %gui11%[\"title\"] = \"§8§lInfinity§r\"
+cmd add eshop %gui11%[\"content\"] = \"§lSelect a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§8§lInfinity Level I §r- §f$15000§r\"
+cmd add eshop %levels11%[] = %cancel%
+cmd add eshop %levels11%[] = %level1%
+cmd add eshop %gui11%[\"buttons\"] = %levels11%
+cmd add eshop %response11% = dialog(%player%, %gui11%)
+cmd add eshop if varset(%response11%) = %false% then exit
+cmd add eshop if %response11% = 15000 then exit
+cmd add eshop if %response11% = 1 then goto 1125
+cmd add eshop exit
+cmd insert eshop 1125 if %money% < 15000 then message %player% §fYou need at least $15000 for this enchant.
+cmd add eshop if %money% < 15000 then exit
+cmd add eshop ascon /takemoney %player% 15000
+cmd add eshop ascon /enchant %player% infinity 1
+cmd add eshop exit
+
+
+
+cmd insert eshop 1200 %gui12%[\"type\"] = \"form\"
+cmd add eshop %gui12%[\"title\"] = \"§4§lThorns§r\"
+cmd add eshop %gui12%[\"content\"] = \"§lChoose a Level§r\"
+cmd add eshop %cancel%[\"text\"] = \"§c§lCancel§r\"
+cmd add eshop %level1%[\"text\"] = \"§4§lThorns Level I §r- §f$2000§r\"
+cmd add eshop %level2%[\"text\"] = \"§4§lThorns Level II §r- §f$3000§r\"
+cmd add eshop %level3%[\"text\"] = \"§4§lThorns Level III §r- §f$5000§r\"
+cmd add eshop %levels12%[] = %cancel%
+cmd add eshop %levels12%[] = %level1%
+cmd add eshop %levels12%[] = %level2%
+cmd add eshop %levels12%[] = %level3%
+cmd add eshop %gui12%[\"buttons\"] = %levels12%
+cmd add eshop %response12% = dialog(%player%, %gui12%)
+cmd add eshop if varset(%response12%) = %false% then exit
+cmd add eshop if %response12% = 0 then exit
+cmd add eshop if %response12% = 1 then goto 1225
+cmd add eshop if %response12% = 2 then goto 1250
+cmd add eshop if %response12% = 3 then goto 1275
+cmd add eshop exit
+cmd insert eshop 1225 if %money% < 2000 then message %player% §fYou need at least $2000 for this enchant.
+cmd add eshop if %money% < 2000 then exit
+cmd add eshop ascon /takemoney %player% 2000
+cmd add eshop ascon /enchant %player% thorns 1
+cmd add eshop exit
+cmd insert eshop 1250 if %money% < 3000 then message %player% §fYou need at least $3000 for this enchant.
+cmd add eshop if %money% < 3000 then exit
+cmd add eshop ascon /takemoney %player% 3000
+cmd add eshop ascon /enchant %player% thorns 2
+cmd add eshop exit
+cmd insert eshop 1275 if %money% < 5000 then message %player% §fYou need at least $5000 for this enchant.
+cmd add eshop if %money% < 5000 then exit
+cmd add eshop ascon /takemoney %player% 5000
+cmd add eshop ascon /enchant %player% thorns 3
+cmd add eshop exit
