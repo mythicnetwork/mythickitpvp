@@ -1,5 +1,4 @@
 cmd create servers Mythic Network Servers
-cmd add servers sleep 1
 cmd add servers %player% = %p%
 cmd add servers %gui%[\"type\"] = \"form\"
 cmd add servers %gui%[\"title\"] = \"§6Network Selector\"

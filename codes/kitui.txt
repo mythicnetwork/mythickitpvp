@@ -1,8 +1,7 @@
 cmd create kits A advanced kit UI made by NikosProGamer
-cmd add kits sleep 1
 cmd add kits let %allowed% = array(\"YT\", \"Guest\", \"Creator\", \"God\", \"Warrior\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Voter\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %allowed% then goto 7
+cmd add kits if %pgrp% in %allowed% then goto 6
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits %player% = %p%
@@ -23,11 +22,11 @@ cmd add kits %buttons%[] = %button4%
 cmd add kits %buttons%[] = %button5%
 cmd add kits %gui%[\"buttons\"] = %buttons%
 cmd add kits %response% = dialog(%player%, %gui%)
-cmd add kits if %response% = 0 then goto 33
-cmd add kits if %response% = 1 then goto 43
-cmd add kits if %response% = 2 then goto 57
-cmd add kits if %response% = 3 then goto 67
-cmd add kits if %response% = 4 then goto 77
+cmd add kits if %response% = 0 then goto 31
+cmd add kits if %response% = 1 then goto 40
+cmd add kits if %response% = 2 then goto 53
+cmd add kits if %response% = 3 then goto 62
+cmd add kits if %response% = 4 then goto 71
 cmd add kits if %response% = 5 then goto exit
 cmd add kits exit
 cmd add kits #MemberKit

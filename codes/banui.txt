@@ -1,13 +1,12 @@
 cmd create banui Ban UI 1.1.0
-cmd edit banui 1 sleep 1
-cmd edit banui 2 let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
-cmd edit banui 3 let %pgrp% = playergroup(%p%)
-cmd edit banui 4 if %pgrp% in %staff% then goto 7
-cmd edit banui 5 message %p% §6You don't have permission to use this command.
-cmd edit banui 6 exit
-cmd edit banui 7 let %player% = %p%
-cmd edit banui 8 if varset(%args%[1]) then %player% = %args%[1]
-cmd edit banui 9 %all% = onlineplayers()
+cmd edit banui 1 let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
+cmd edit banui 2 let %pgrp% = playergroup(%p%)
+cmd edit banui 3 if %pgrp% in %staff% then goto 6
+cmd edit banui 4 message %p% §6You don't have permission to use this command.
+cmd edit banui 5 exit
+cmd edit banui 6 let %player% = %p%
+cmd edit banui 7 if varset(%args%[1]) then %player% = %args%[1]
+cmd edit banui 8 %all% = onlineplayers()
 cmd edit banui 31 let %form%[\"type\"] = \"custom_form\"
 cmd edit banui 32 let %form%[\"title\"] = \"§6Ban UI 1.0.0\"
 cmd edit banui 35 let %item1%[\"type\"] = \"dropdown\"

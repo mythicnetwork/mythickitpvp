@@ -1,5 +1,4 @@
 cmd create rules Server Rules
-cmd add rules sleep 1
 cmd add rules %player% = %p%
 cmd add rules %gui%[\"type\"] = \"form\"
 cmd add rules %gui%[\"title\"] = \"§d§lMythic §cNetwork §r§e§k||§r§6 Rules\"

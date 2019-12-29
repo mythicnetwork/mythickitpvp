@@ -1,5 +1,4 @@
 cmd create version Shows server patch & version
-cmd add version sleep 1
 cmd add version %player% = %p%
 cmd add version %gui%[\"type\"] = \"form\"
 cmd add version %gui%[\"title\"] = \"§6§lKitPvP version\"

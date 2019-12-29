@@ -1,5 +1,4 @@
 cmd create network Check the Network's Status
-cmd add network sleep 1
 cmd add network %player% = %p%
 cmd add network %gui%[\"type\"] = \"form\"
 cmd add network %gui%[\"title\"] = \"§6Network Status\"
