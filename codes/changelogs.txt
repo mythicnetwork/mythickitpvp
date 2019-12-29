@@ -1,9 +1,8 @@
-cmd create changelogs Check whats added in the latest patch.
-cmd add changelogs sleep 2
+cmd create changelogs Check whats added in the latest patch
 cmd add changelogs %player% = %p%
 cmd add changelogs %gui%[\"type\"] = \"form\"
-cmd add changelogs %gui%[\"title\"] = \"§6What's new in §4§l1.0.0§r§6!\"
-cmd add changelogs %gui%[\"content\"] = \"§c- D-Day §6is here!\\n§6The Portal brought more, and will continue to...\\n§r\\n§6- Warrior and Emperor Donator Ranks are now available!\\n§6Check /newranks to check out whats available with each ranks and prices.\\n§r\\n§6- Anti-lag steps!\\n§r\\n§6The Development Team is working on making commands more anti-lag supported to make the server and your device not lag!\\n§6- We are finally out of Beta!\\n§6With the 1.0.0 release, Mythic is official out of Beta! Woohoo!\\n\\n§6- Added /staff.\\n§6Everything related to our Staff Team is now there!\\n§r\\n§6- New stuff on /kits!\\n§6We have now implemented a test version of buyable kits!\\n§r\\n§d§lBUG FIXES\\n§r\\n§6- Fixed /report on the bug report side.\\n§r\\n§6- Fixed a issue with /stats.\\n§r\\n§6Fixed a issue with /kits.\"
+cmd add changelogs %gui%[\"title\"] = \"§6What's new in §4§l1.1.0§r§6!\"
+cmd add changelogs %gui%[\"content\"] = \"§e§lNEW FEATURES\\n§r\\n§6- Added /events! Check it for more info about a new upcoming event!\\n§r\\n§6- Added 1v1! Check out the new 1v1 Hub by clicking on the 1v1 slapper in spawn!\\n§r\\n§d§lBUG FIXES AND OPTIMISATIONS\\n§r\\n§6- Improvements to all command backends! Expect most of the UI commands to work better now and without issues!\\n§r\\n§6- Lag fixes\\n§r\\n§6- Fixed a issue with /kits."
 cmd add changelogs %button0%[\"text\"] = \"§cExit\"
 cmd add changelogs %buttons%[] = %button0%
 cmd add changelogs %gui%[\"buttons\"] = %buttons%

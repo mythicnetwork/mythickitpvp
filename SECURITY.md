@@ -8,7 +8,7 @@ These are the current supported and non-supported versions of PocketMine-MP, a M
 | ------- | ------------------ |
 | 3.11.0  | :white_check_mark: |
 | 3.10.0  | :white_check_mark: |
-|3.9.8+dev| :white_check_mark: |
+| 3.9.8dev| :white_check_mark: |
 | 4.0.0a  | :x:                |
 
 ## Reporting a Vulnerability

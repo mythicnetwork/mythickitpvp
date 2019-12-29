@@ -1,22 +1,24 @@
-cmd edit report 1 %player% = %p%
-cmd edit report 2 %gui%[\"type\"] = \"form\"
-cmd edit report 3 %gui%[\"title\"] = \"§6Report UI 1.0.0-beta\"
-cmd edit report 4 %gui%[\"content\"] = \"§6What would you like to report?\"
-cmd edit report 5 %button0%[\"text\"] = \"§dA player\"
-cmd edit report 6 %button1%[\"text\"] = \"§dA bug\"
-cmd edit report 7 %button2%[\"text\"] = \"§cExit\"
-cmd edit report 8 %buttons%[] = %button0%
-cmd edit report 9 %buttons%[] = %button1%
-cmd edit report 10 %buttons%[] = %button2%
-cmd edit report 11 %gui%[\"buttons\"] = %buttons%
-cmd edit report 12 %response% = dialog(%player%, %gui%)
-cmd edit report 13 if %response% = 0 then goto 17
-cmd edit report 14 if %response% = 1 then goto 104
-cmd edit report 15 if %response% = 2 then goto exit
-cmd edit report 16 exit
-cmd edit report 17 let %player% = %p%
-cmd edit report 18 if varset(%args%[1]) then %player% = %args%[1]
-cmd edit report 19 %all% = onlineplayers()
+cmd create report Report UI 2.0.0 by NikosProGamer
+cmd edit report 1 %all% = onlineplayers()
+cmd edit report 2 %player% = %p%
+cmd edit report 3 %gui%[\"type\"] = \"form\"
+cmd edit report 4 %gui%[\"title\"] = \"§6Report UI 2.0.0\"
+cmd edit report 5 %gui%[\"content\"] = \"§6What would you like to report?\"
+cmd edit report 6 %button0%[\"text\"] = \"§dA player\"
+cmd edit report 7 %button1%[\"text\"] = \"§dA bug\"
+cmd edit report 8 %button2%[\"text\"] = \"§cExit\"
+cmd edit report 9 %buttons%[] = %button0%
+cmd edit report 10 %buttons%[] = %button1%
+cmd edit report 11 %buttons%[] = %button2%
+cmd edit report 12 %gui%[\"buttons\"] = %buttons%
+cmd edit report 13 %response% = dialog(%player%, %gui%)
+cmd edit report 14 if %response% = 0 then goto 19
+cmd edit report 15 if %response% = 1 then goto 104
+cmd edit report 16 if %response% = 2 then exit
+cmd edit report 17 exit
+cmd edit report 19 let %player% = %p%
+cmd edit report 20 if varset(%args%[1]) then %player% = %args%[1]
+cmd edit report 21 %all% = onlineplayers()
 cmd edit report 31 let %form%[\"type\"] = \"custom_form\"
 cmd edit report 32 let %form%[\"title\"] = \"§6Player Report\"
 cmd edit report 35 let %item1%[\"type\"] = \"dropdown\"
@@ -24,7 +26,7 @@ cmd edit report 36 let %item1%[\"text\"] = \"§6Select a player to report.\"
 cmd edit report 37 let %item1%[\"options\"] = %all%
 cmd edit report 38 let %item2%[\"type\"] = \"input\"
 cmd edit report 39 let %item2%[\"text\"] = \"§6Type why you want to report this player.\"
-cmd edit report 41 let %item2%[\"placeholder\"] = \"Reason\"
+cmd edit report 41 let %item2%[\"placeholder\"] = \"Type here...\"
 cmd edit report 53 let %content%[] = %item1%
 cmd edit report 54 let %content%[] = %item2%
 cmd edit report 58 let %form%[\"content\"] = %content%
@@ -33,11 +35,13 @@ cmd edit report 61 if %response% = %false% then exit
 cmd edit report 62 %index% = %response%[0]
 cmd edit report 63 %name% = %all%[%index%]
 cmd edit report 64 %reason% = %response%[1]
-cmd edit report 65 if varset(%name%) and varset(%reason%) then goto 100
+cmd edit report 65 if varset(%name%) and varset(%reason%) then goto 69
 cmd edit report 68 exit
-cmd edit report 100 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported §d%name%§6 for §d%reason%§6.
-cmd edit report 101 ascon /cmd add reports %p% report %name% for %reason%.
-cmd edit report 102 exit
+cmd edit report 69 %discord_message% = \"**Player Report |** \" + %p% + \" reported \" +%name% + \" for \" + %reason% + \".\"
+cmd edit report 70 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777820519563264&token=slPBiEL0we6t8l7viIwqULQERxO1BueQ3Ydj3sUN_lo1QYVhuQXH_LYBY3rWvzI-xP78&message=\" + urlencode(%discord_message%))
+cmd edit report 71 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported §d%name%§6 for §d%reason%§6. Thanks for making the network safer!
+cmd edit report 72 ascon /cmd add reports %p% reported %name% for %reason%.
+cmd edit report 73 exit
 cmd edit report 103 #BUG
 cmd edit report 104 %all% = onlineplayers()
 cmd edit report 105 %player% = %p% 
@@ -49,7 +53,11 @@ cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type here...\"
 cmd edit report 111 %con%[] = %i1%
 cmd edit report 112 %form%[\"content\"] = %con%
 cmd edit report 113 %response% = dialog(%p%, %form%)
-cmd edit report 114 if %response% = \"\" then exit
-cmd edit report 115 message %p% §d§lMythic §cNetwork§6 »§r§6 Thanks for reporting a bug!
-cmd edit report 116 ascon /cmd add bugs %p% reported this bug: %response%
-cmd edit report 117 exit
+cmd edit report 114 %bug% = %response%[0]
+cmd edit report 115 if varset(%bug%) then goto 117
+cmd edit report 116 exit
+cmd edit report 117 %discord_message% = \"**Bug Report |** \" + %p% + \" reported the bug: \" + %bug% + \".\"
+cmd edit report 118 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777452771639315&token=PmtHRsLsqgVepbsf3CSp2CeTUkbnqFMR4wJxVXDZH0AVVO5mZGGqOV7O0DaKo320QVRn&message=\" + urlencode(%discord_message%))
+cmd edit report 119 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported this bug: §d%bug%§6. Thanks for making our job easier!
+cmd edit report 120 ascon /cmd add bugs %p% reported this bug: %bug%
+cmd edit report 121 exit
