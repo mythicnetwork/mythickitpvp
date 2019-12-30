@@ -7,7 +7,7 @@ cmd edit vote 5 if %response% = 1 then goto 100
 cmd edit vote 6 if %response% = 0 then message %p% §d§lM§cN §6VOTE §e| §r§dYou didn't vote today!
 cmd edit vote 7 if %response% = 2 then message %p% §d§lM§cN §6VOTE §e| §r§dYou already claimed your reward!
 cmd edit vote 8 exit
-cmd edit vote 100 vote let %url2%[] = \"https://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key={5iOAIRySRd2dyhmB3oz6KL8W4aA1Dj84ko6}&username=\"
+cmd edit vote 100 let %url2%[] = \"https://minecraftpocket-servers.com/api/?action=post&object=votes&element=claim&key={5iOAIRySRd2dyhmB3oz6KL8W4aA1Dj84ko6}&username=\"
 cmd edit vote 101 let %url2%[] = %p%
 cmd edit vote 102 let %api2% = join(%url2%, \"\")
 cmd edit vote 103 let %response% = geturl(%api2%)
