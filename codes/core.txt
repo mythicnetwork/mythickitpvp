@@ -1,2 +1,0 @@
-cmd create m Mythic Core
-cmd edit m 1 %player% = %p%
