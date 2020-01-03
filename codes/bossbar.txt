@@ -6,4 +6,3 @@ cmd edit boss 5 boss show logo onlineplayers()
 cmd edit boss 6 boss title logo %bar%
 cmd edit boss 7 exit
 cmd edit boss 8 boss create logo
-cmd edit boss 9 exit
