@@ -1,1 +1,1 @@
-sb §e§k||§r §d§lMythic §cNetwork §r§e§k||§r%LINE%§6Welcome §b%NICK%§6! Rank §l»§r§d %PP_GROUP%§r%LINE%§6You're playing on §4§lKitPvP §r§6§l»§4§l 1.1.0§r§6!§r%LINE%§6Have fun on §d§lMythic§r§6!
+sb §e§k||§r §d§lMythic §cNetwork §r§e§k||§r%LINE%§6Welcome §b%NICK%§6! Rank §l»§r§d %PP_GROUP%§r%LINE%§6You're playing on §4§lKitPvP §r§6§l»§4§l 1.2.0§r§6!§r%LINE%§6Have fun on §d§lMythic§r§6!

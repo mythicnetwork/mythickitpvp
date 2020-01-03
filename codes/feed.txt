@@ -1,11 +1,6 @@
-cmd create feed Feed yourself (Donator Command)
-cmd add feed let %donators% = array(\"Owner\", \"YT\", \"Creator\", \"Mod\", \"Helper\", \"Admin\", \"Warrior\", \"Emperor\", \"God\")
-cmd add feed let %pgrp% = playergroup(%p%)
-cmd add feed if %pgrp% in %donators% then goto 6
-cmd add feed message %p% §6You do not have permission to run this command.
-cmd add feed exit 
+cmd create feed Feed yourself
 cmd add feed let %player% = %args%[1] 
-cmd add feed if varset(%player%) then goto 8 
+cmd add feed if varset(%player%) then goto 5
 cmd add feed let %status% = playerstatus(%p%) 
 cmd add feed let %saturation% = %status%["saturation"]
 cmd add feed treat %p% %health% %saturation% 20

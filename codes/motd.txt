@@ -1,4 +1,4 @@
-/motd add §d§lMythic §cNetwork §6» §6KitPvP §41.1.0§6!
+/motd add §d§lMythic §cNetwork §6» §6KitPvP §41.2.0§6!
 /motd add §d§lMythic §cNetwork §6» §6Welcome!
 /motd add §d§lMythic §cNetwork §6» §6D-Day is here!
 /motd add §d§lMythic §cNetwork §6» §6We are out of beta!

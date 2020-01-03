@@ -1,10 +1,10 @@
-cmd create version Shows server patch & version
-cmd add version %player% = %p%
-cmd add version %gui%[\"type\"] = \"form\"
-cmd add version %gui%[\"title\"] = \"§6§lKitPvP version\"
-cmd add version %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.11.9+DEV§6 based on §d1.14-1.14.1§6.\\n§r\\n§6Running patch v§4§l1.1.0 Stable§r §6based on §d§lMythic §cKitPvP §r§6core.\"
-cmd add version %button0%[\"text\"] = \"§c§lExit\"
-cmd add version %buttons%[] = %button0%
-cmd add version %gui%[\"buttons\"] = %buttons%
-cmd add version %response% = dialog(%player%, %gui%)
-cmd add version if %response% = 0 then exit
+cmd create v Shows server patch & version
+cmd add v %player% = %p%
+cmd add v %gui%[\"type\"] = \"form\"
+cmd add v %gui%[\"title\"] = \"§6§lKitPvP version\"
+cmd add v %gui%[\"content\"] = \"§6Showing Information about Server:\\n§r\\n§6Running PocketMine-MP v§c3.11.9+DEV§6 based on §d1.14-1.14.1§6.\\n§r\\n§6Running patch v§4§l1.2.0 Stable§r §6based on §d§lMythic §cKitPvP §r§6core.\"
+cmd add v %button0%[\"text\"] = \"§c§lExit\"
+cmd add v %buttons%[] = %button0%
+cmd add v %gui%[\"buttons\"] = %buttons%
+cmd add v %response% = dialog(%player%, %gui%)
+cmd add v if %response% = 0 then exit
