@@ -26,7 +26,7 @@ cmd edit report 36 let %item1%[\"text\"] = \"§6Select a player to report.\"
 cmd edit report 37 let %item1%[\"options\"] = %all%
 cmd edit report 38 let %item2%[\"type\"] = \"input\"
 cmd edit report 39 let %item2%[\"text\"] = \"§6Type why you want to report this player.\"
-cmd edit report 41 let %item2%[\"placeholder\"] = \"Type here...\"
+cmd edit report 41 let %item2%[\"placeholder\"] = \"§dType here...\"
 cmd edit report 53 let %content%[] = %item1%
 cmd edit report 54 let %content%[] = %item2%
 cmd edit report 58 let %form%[\"content\"] = %content%
@@ -41,7 +41,12 @@ cmd edit report 69 %discord_message% = \"**Player Report |** \" + %p% + \" repor
 cmd edit report 70 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777820519563264&token=slPBiEL0we6t8l7viIwqULQERxO1BueQ3Ydj3sUN_lo1QYVhuQXH_LYBY3rWvzI-xP78&message=\" + urlencode(%discord_message%))
 cmd edit report 71 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported §d%name%§6 for §d%reason%§6. Thanks for making the network safer!
 cmd edit report 72 ascon /cmd add reports %p% reported %name% for %reason%.
-cmd edit report 73 exit
+cmd edit report 73 let %sn% = array(\"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Trainee\", \"Developer\")
+cmd edit report 74 let %pgrp% = playergroup(%p%)
+cmd edit report 75 if %p% in %pgrp% then goto 77
+cmd edit report 76 exit
+cmd edit report 77 message %p% §d§lMN §6§oSTAFF §r§e§l| §c§lWARNING! §6Player §d%name% §6was reported for §d%reason%§6, go check the player!
+cmd edit report 78 exit
 cmd edit report 103 #BUG
 cmd edit report 104 %all% = onlineplayers()
 cmd edit report 105 %player% = %p% 
@@ -58,6 +63,6 @@ cmd edit report 115 if varset(%bug%) then goto 117
 cmd edit report 116 exit
 cmd edit report 117 %discord_message% = \"**Bug Report |** \" + %p% + \" reported the bug: \" + %bug% + \".\"
 cmd edit report 118 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777452771639315&token=PmtHRsLsqgVepbsf3CSp2CeTUkbnqFMR4wJxVXDZH0AVVO5mZGGqOV7O0DaKo320QVRn&message=\" + urlencode(%discord_message%))
-cmd edit report 119 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported this bug: §d%bug%§6. Thanks for making our job easier!
+cmd edit report 119 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported this bug: §d%bug%§6. Thanks for making the server more bug-free!
 cmd edit report 120 ascon /cmd add bugs %p% reported this bug: %bug%
 cmd edit report 121 exit

@@ -4,12 +4,12 @@ cmd add stats if %args%[1] = \"\" then let %player% = %p%
 cmd add stats let %phand% = playerhand(%player%)
 cmd add stats let %bal% = playerbalance(%player%) 
 cmd add stats let %r% = playergroup(%player%)
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §6Loading Stats... 
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §6%player%'s Stats!
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §6Rank :§d %r%
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §6Money :§d %bal%$
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §6Current item in hand : §d%phand%
-cmd add stats message %p% §d§lMythic §cNetwork§r §e| §cPvP §6Stats of %player%
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §6Loading Stats... 
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §6%player%'s Stats!
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §6Rank :§d %r%
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §6Money :§d %bal%$
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §6Current item in hand : §d%phand%
+cmd add stats message %p% §d§lMythic §cNetwork§d DATA §e| §cPvP §6Stats of %player%
 cmd add stats /killrate stats %player%
-cmd add stats message %p% §r
+cmd add stats message %p% §6§l----------------------------------
 cmd add stats exit

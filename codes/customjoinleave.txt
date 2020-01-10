@@ -9,7 +9,7 @@ cmd edit jm 7 message onlineplayers() §d§lM§cN§r §6+ §e§l| §d%p%
 cmd edit jm 8 exit
 cmd edit jm 9 message onlineplayers() §d§lM§cN§r §6+ §e§l| §c%pgrp% §d%p%
 cmd edit jm 12 boss health logo 1
-cmd edit jm 13 let %bar% = let %bar% = \"§d§lMythic §cNetwork §6KitPvP\\n§r\\n§6§lWELCOME !\"
+cmd edit jm 13 let %bar% = \"       §d§lMythic §cNetwork\\n§r\\n§6§lKitPvP 1.2.0\"
 cmd edit jm 14 boss show logo onlineplayers()
 cmd edit jm 15 boss title logo %bar%
 cmd edit jm 16 exit

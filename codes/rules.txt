@@ -2,7 +2,7 @@ cmd create rules Server Rules
 cmd add rules %player% = %p%
 cmd add rules %gui%[\"type\"] = \"form\"
 cmd add rules %gui%[\"title\"] = \"§d§lMythic §cNetwork §r§e§k||§r§6 Rules\"
-cmd add rules %gui%[\"content\"] = \"§6Welcome to §d§lMythic§c Network§r§6! Before you continue please follow our rules.\\n§61 > Don't swear at other people.\\n§62 > Don't be disrespectful to Staff Members.\\n§63 > Don't post 18+ porn content. There may be little kids on the server.\\n§64 > Don't advertise your server or other services related to minecraft/discord servers.\\n§65 > Don't trade with others stuff for real money. It is prohibited.\\n§66 > Make sure to accept and follow the Minecraft Terms of Service (ToS).\\n§6Thank you for joining and following the rules.\"
+cmd add rules %gui%[\"content\"] = \"§6Welcome to §d§lMythic§c Network§r§6! Before you continue please follow our rules.\\n§61 > Don't swear at other people.\\n§r\\n§62 > Don't be disrespectful to Staff Members.\\n§r\\n§63 > Don't post 18+ porn content. There may be little kids on the server.\\n§r\\n§64 > Don't advertise your server or other services related to minecraft/discord servers.\\n§r\\n§65 > Don't trade with others stuff for real money. It is prohibited.\\n§r\\n§66 > Make sure to accept and follow the Minecraft Terms of Service (ToS).\\n§r\\n§6Thank you for joining and following the rules.\"
 cmd add rules %button0%[\"text\"] = \"§cExit\"
 cmd add rules %buttons%[] = %button0%
 cmd add rules %gui%[\"buttons\"] = %buttons%

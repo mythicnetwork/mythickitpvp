@@ -4,14 +4,14 @@ cmd add cl let %pgrp% = playergroup(%p%)
 cmd add cl if %pgrp% in %staff% then goto 6
 cmd add cl message %p% §cYou don't have permission to use this command.
 cmd add cl exit
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 10 minutes.
+cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 10 minutes.
 cmd add cl sleep 300
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 5 minutes.
+cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 5 minutes.
 cmd add cl sleep 120
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 2 minutes.
+cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 2 minutes.
 cmd add cl sleep 60
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 1 minute.
+cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 1 minute.
 cmd add cl sleep 60
-cmd add cl ascon /lagg clear
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Cleared excessive entities.
+cmd add cl ascon /lagg clear all
+cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Cleared lagg!
 cmd add cl goto 6 

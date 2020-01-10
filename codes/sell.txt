@@ -1,4 +1,4 @@
-cmd create sell Sell your items! 
+cmd create sell Sell your items! (More Items are being added!)
 cmd add sell let %status% = playerstatus(%p%)
 cmd add sell load %sells%
 cmd add sell if varset(%args%[1]) = %false% then goto 188

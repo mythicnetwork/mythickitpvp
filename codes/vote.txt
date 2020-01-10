@@ -16,5 +16,5 @@ cmd edit vote 105 let %av% = array(\"Voter\", \"Trainee\", \"Admin\", \"Mod\", \
 cmd edit vote 106 let %pgrp% = playergroup(%p%)
 cmd edit vote 107 if %pgrp% in %av% then goto 109
 cmd edit vote 108 ascon /setgroup %p% Voter
-cmd edit vote 109 ascon /givemoney %p% 1500
+cmd edit vote 109 ascon /givemoney %p% 5000
 cmd edit vote 110 exit
