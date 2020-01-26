@@ -1,9 +1,5 @@
 cmd create cl §eClear lagg.
-cmd add cl let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Admin\")
-cmd add cl let %pgrp% = playergroup(%p%)
-cmd add cl if %pgrp% in %staff% then goto 6
-cmd add cl message %p% §cYou don't have permission to use this command.
-cmd add cl exit
+cmd edit cl 5 ascon /logoboss
 cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 10 minutes.
 cmd add cl sleep 300
 cmd add cl message onlineplayers() §d§lM§cN §6CL §8§l>§r §6Clearing lagg in 5 minutes.
