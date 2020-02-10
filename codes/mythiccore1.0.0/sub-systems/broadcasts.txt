@@ -1,7 +1,0 @@
-cmd create bc Server Broadcasts
-cmd unregister bc
-cmd add bc message onlineplayers() §d§lMythic §cNetwork §6» §6Welcome to the Factions §cBeta§6!
-cmd add bc sleep 3800
-cmd add bc message onlineplayers() §d§lMythic §cNetwork §6» §6Features are not fully configured and optimized so you will 100% experience some lag/bugs.
-cmd add bc sleep 4200
-cmd add bc goto 1
