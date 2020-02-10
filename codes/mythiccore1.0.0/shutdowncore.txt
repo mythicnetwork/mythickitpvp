@@ -1,0 +1,14 @@
+cmd create shutcore Server Shutdown Core part of Mythic Core.
+cmd unregister shutcore
+cmd trigger shutdown shutcore
+cmd add shutcore message onlineplayers() The Mythic Core is initializing shutdown.
+cmd add shutcore let %discord_message% = \"**```The Mythic Core is initializing shutdown.```**\"
+cmd add shutcore let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add shutcore async
+cmd add shutcore message onlineplayers() Mythic Core | Unloading all services & systems...
+cmd add shutcore message onlineplayers() Mythic Core | Successfully unloaded all services & systems. Now shutting down...
+cmd add shutcore let %discord_message% = \"**```Mythic Core | Unloading all services & systems...```**\"
+cmd add shutcore let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add shutcore let %discord_message% = \"**```Mythic Core | Unloaded all services & systems. Now shutting down...```**\"
+cmd add shutcore let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add shutcore ascon /cmd kill all

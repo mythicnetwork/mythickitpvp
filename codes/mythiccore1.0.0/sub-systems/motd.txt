@@ -1,0 +1,11 @@
+cmd create motdmngr MOTD manager
+cmd unregister motdmngr
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd add §d§lMythic §cNetwork §6» §6Factions §cBeta§6!
+cmd add motdmngr ascon /motd add §d§lMythic §cNetwork §6» §6Welcome!
+cmd add motdmngr ascon /motd add §d§lMythic §cNetwork §6» §6Factions is now OUT!
+cmd add motdmngr message onlineplayers() MOTD messages synchronized.
+cmd add motdmngr exit

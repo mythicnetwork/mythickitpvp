@@ -1,0 +1,101 @@
+cmd create cratemngr not for manual use!
+cmd edit cratemngr 1 if %args%[9] = \"§6Crate Key\" then goto 3
+cmd edit cratemngr 2 exit
+cmd edit cratemngr 3 let %ll% = %args%[3]
+cmd edit cratemngr 4 let %xx% = %args%[4]
+cmd edit cratemngr 5 let %yy% = %args%[5]
+cmd edit cratemngr 6 let %zz% = %args%[6]
+cmd edit cratemngr 7 let %blk% = blockinfo(%ll%, %xx%, %yy%, %zz%)
+cmd edit cratemngr 8 if %blk%[\"id\"] != \"146\" then exit
+cmd edit cratemngr 9 let %inv% = playerinventory(%p%)
+cmd edit cratemngr 10 let %sin% = size(%inv%)
+cmd edit cratemngr 11 carry %p% 0
+cmd edit cratemngr 12 let %inb% = 0
+cmd edit cratemngr 13 if %inb% = %sin% then goto 21
+cmd edit cratemngr 14 let %iid% = %inv%[%inb%]
+cmd edit cratemngr 15 let %iiid% = %iid%[\"id\"]
+cmd edit cratemngr 16 let %iiiid% = %iid%[\"count\"]
+cmd edit cratemngr 17 if %iiid% = 399 then goto 19
+cmd edit cratemngr 18 ascon /give %p% %iiid% %iiiid%
+cmd edit cratemngr 19 %inb% = %inb% + 1
+cmd edit cratemngr 20 goto 13
+cmd edit cratemngr 21 let %itm% = random(0, 7)
+cmd edit cratemngr 22 message %p% §d§lM§cN §6CRATES §e|§r §6You claimed your crate key!
+cmd edit cratemngr 23 if %itm% = 0 then goto 32
+cmd edit cratemngr 24 if %itm% = 1 then goto 47
+cmd edit cratemngr 25 if %itm% = 2 then goto 52
+cmd edit cratemngr 26 if %itm% = 3 then goto 63
+cmd edit cratemngr 27 if %itm% = 4 then goto 66
+cmd edit cratemngr 28 if %itm% = 5 then goto 69
+cmd edit cratemngr 29 if %itm% = 6 then goto 72
+cmd edit cratemngr 30 if %itm% = 7 then goto 75
+cmd edit cratemngr 31 exit
+cmd edit cratemngr 32 message %p% §d§lM§cN §6CRATES §e|§r §dYou won a §cOverlord §6kit!
+cmd edit cratemngr 33 ascon /give %p% diamond_helmet 1 {ench:[{id:0s,lvl:4s}]}
+cmd edit cratemngr 34 ascon /give %p% diamond_chestplate 1 {ench:[{id:0s,lvl:4s}]}
+cmd edit cratemngr 35 ascon /give %p% diamond_leggings 1 {ench:[{id:0s,lvl:4s}]}
+cmd edit cratemngr 36 ascon /give %p% diamond_boots 1 {ench:[{id:0s,lvl:4s}]}
+cmd edit cratemngr 37 ascon /give %p% diamond_sword 1 {ench:[{id:9s,lvl:4s}]}
+cmd edit cratemngr 38 ascon /give %p% bow 1 {ench:[{id:19s,lvl:4s}]}
+cmd edit cratemngr 39 ascon /give %p% golden_apple 12
+cmd edit cratemngr 40 ascon /give %p% steak 64
+cmd edit cratemngr 41 ascon /give %p% 466 64
+cmd edit cratemngr 42 ascon /give %p% diamond_pickaxe 1 {ench:[{id:15s,lvl:4s}]}
+cmd edit cratemngr 43 ascon /give %p% diamond_axe 1 {ench:[{id:15s,lvl:3s}]}
+cmd edit cratemngr 44 ascon /give %p% ender_pearl 16
+cmd edit cratemngr 45 ascon /give %p% obsidian 128
+cmd edit cratemngr 46 exit
+cmd edit cratemngr 47 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 3 crate keys!
+cmd edit cratemngr 48 ascon /cmd run key %p%
+cmd edit cratemngr 49 ascon /cmd run key %p%
+cmd edit cratemngr 50 ascon /cmd run key %p%
+cmd edit cratemngr 51 exit
+cmd edit cratemngr 52 message %p% §d§lM§cN §6CRATES §e|§r §dYou won a §e§lGolden King§r §6kit!
+cmd edit cratemngr 53 ascon /give %p% golden_helmet 1
+cmd edit cratemngr 54 ascon /give %p% golden_chestplate 1
+cmd edit cratemngr 55 ascon /give %p% golden_leggings 1
+cmd edit cratemngr 56 ascon /give %p% golden_boots 1
+cmd edit cratemngr 57 ascon /give %p% golden_sword 1
+cmd edit cratemngr 58 ascon /give %p% golden_apple 12
+cmd edit cratemngr 59 ascon /give %p% steak 64
+cmd edit cratemngr 60 ascon /give %p% gold_pickaxe 1
+cmd edit cratemngr 61 ascon /give %p% gold_axe 1
+cmd edit cratemngr 62 exit
+cmd edit cratemngr 63 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 128 obsidian!
+cmd edit cratemngr 64 ascon /give %p% obsidian 128
+cmd edit cratemngr 65 exit
+cmd edit cratemngr 66 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 16 Ender Pearls!
+cmd edit cratemngr 67 ascon /give %p% ender_pearl 16
+cmd edit cratemngr 68 exit
+cmd edit cratemngr 69 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 64 Stone!
+cmd edit cratemngr 70 ascon /give %p% stone 64
+cmd edit cratemngr 71 exit
+cmd edit cratemngr 72 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 64 Golden Apples!
+cmd edit cratemngr 73 ascon /give %p% golden_apple 64
+cmd edit cratemngr 74 exit
+cmd edit cratemngr 75 message %p% §d§lM§cN §6CRATES §e|§r §dYou won 32 Emeralds!
+cmd edit cratemngr 76 ascon /give %p% emerald 32
+cmd edit cratemngr 77 exit
+
+cmd create key1 Give a crate key to a player
+cmd edit key1 1 if varset(%args%[1]) = %true% then goto 4
+cmd edit key1 2 message %p% §6Enter a player name!
+cmd edit key1 3 exit
+cmd edit key1 4 let %trg% = %args%[1]
+cmd edit key1 5 ascon /give %trg% 399 1 {display:{Name:§6Crate Key}}
+cmd edit key1 6 ascon /give %trg% 399 1 {display:{Name:§6Crate Key}}
+cmd edit key1 7 message onlineplayers() §d§lM§cN §e|§r §d%trg% §6has received 2 crate keys from voting! Vote now to get rewards!
+cmd edit key1 8 exit
+
+cmd create key Give a crate key to a player
+cmd edit key 1 if varset(%args%[1]) = %true% then goto 4
+cmd edit key 2 message %p% §6Enter a player name!
+cmd edit key 3 exit
+cmd edit key 4 let %trg% = %args%[1]
+cmd edit key 5 ascon /give %trg% 399 1 {display:{Name:§6Crate Key}}
+cmd edit key 6 exit
+
+cmd unregister cratemngr
+cmd trigger touch cratemngr
+cmd unregister key
+cmd unregister key1

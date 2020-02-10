@@ -1,0 +1,31 @@
+cmd create jm join message
+cmd edit jm 1 %premiun% = array(\"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Emperor\", \"Warrior\")
+cmd edit jm 2 %normal% = array(\"Guest\")
+cmd edit jm 3 let %pgrp% = playergroup(%p%)
+cmd edit jm 4 if %pgrp% in %normal% then goto 7
+cmd edit jm 5 if %pgrp% in %premiun% then goto 9
+cmd edit jm 6 exit
+cmd edit jm 7 message onlineplayers() §d§lM§cN§r §6+ §e§l| §d%p%
+cmd edit jm 8 exit
+cmd edit jm 9 message onlineplayers() §d§lM§cN§r §6+ §e§l| §c%pgrp% §d%p%
+cmd edit jm 11 boss health logo 1
+cmd edit jm 12 let %bar% = \"       §d§lMythic §cNetwork\\n§6§lFactions §cBeta 0.3.0\"
+cmd edit jm 13 boss show logo onlineplayers()
+cmd edit jm 14 boss title logo %bar%
+cmd edit jm 15 exit
+cmd trigger login jm
+cmd unregister jm
+
+cmd create lm leave message
+cmd edit lm 1 %premiun% = array(\"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Emperor\", \"Warrior\")
+cmd edit lm 2 %normal% = array(\"Guest\")
+cmd edit lm 3 let %pgrp% = playergroup(%p%)
+cmd edit lm 4 if %pgrp% in %normal% then goto 7
+cmd edit lm 5 if %pgrp% in %premiun% then goto 9
+cmd edit lm 6 exit
+cmd edit lm 7 message onlineplayers() §d§lM§cN§r §4- §e§l| §d%p%
+cmd edit lm 8 exit
+cmd edit lm 9 message onlineplayers() §d§lM§cN§r §4- §e§l| §c%pgrp% §d%p%
+cmd edit lm 10 exit
+cmd trigger leave lm
+cmd unregister lm
