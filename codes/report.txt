@@ -1,11 +1,11 @@
-cmd create report Report UI 2.0.0 by NikosProGamer
+cmd create report Report UI 3.0.0 by NikosProGamer
 cmd edit report 1 %all% = onlineplayers()
 cmd edit report 2 %player% = %p%
 cmd edit report 3 %gui%[\"type\"] = \"form\"
 cmd edit report 4 %gui%[\"title\"] = \"§6Report UI 2.0.0\"
 cmd edit report 5 %gui%[\"content\"] = \"§6What would you like to report?\"
-cmd edit report 6 %button0%[\"text\"] = \"§dA player\"
-cmd edit report 7 %button1%[\"text\"] = \"§dA bug\"
+cmd edit report 6 %button0%[\"text\"] = \"§dA player.\"
+cmd edit report 7 %button1%[\"text\"] = \"§dA bug.\"
 cmd edit report 8 %button2%[\"text\"] = \"§cExit\"
 cmd edit report 9 %buttons%[] = %button0%
 cmd edit report 10 %buttons%[] = %button1%
@@ -20,13 +20,13 @@ cmd edit report 19 let %player% = %p%
 cmd edit report 20 if varset(%args%[1]) then %player% = %args%[1]
 cmd edit report 21 %all% = onlineplayers()
 cmd edit report 31 let %form%[\"type\"] = \"custom_form\"
-cmd edit report 32 let %form%[\"title\"] = \"§6Player Report\"
+cmd edit report 32 let %form%[\"title\"] = \"§6§lPlayer Report Platform\"
 cmd edit report 35 let %item1%[\"type\"] = \"dropdown\"
-cmd edit report 36 let %item1%[\"text\"] = \"§6Select a player to report.\"
+cmd edit report 36 let %item1%[\"text\"] = \"§6Select one of the active players to report.\"
 cmd edit report 37 let %item1%[\"options\"] = %all%
 cmd edit report 38 let %item2%[\"type\"] = \"input\"
-cmd edit report 39 let %item2%[\"text\"] = \"§6Type why you want to report this player.\"
-cmd edit report 41 let %item2%[\"placeholder\"] = \"§dType here...\"
+cmd edit report 39 let %item2%[\"text\"] = \"§6Type why you want to report this player. §c§lWARNING! §r§dFalse reports are tracked and false reporters will be punished.\"
+cmd edit report 41 let %item2%[\"placeholder\"] = \"§dType report reason here...\"
 cmd edit report 53 let %content%[] = %item1%
 cmd edit report 54 let %content%[] = %item2%
 cmd edit report 58 let %form%[\"content\"] = %content%
@@ -40,21 +40,21 @@ cmd edit report 68 exit
 cmd edit report 69 %discord_message% = \"**Player Report |** \" + %p% + \" reported \" +%name% + \" for \" + %reason% + \".\"
 cmd edit report 70 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777820519563264&token=slPBiEL0we6t8l7viIwqULQERxO1BueQ3Ydj3sUN_lo1QYVhuQXH_LYBY3rWvzI-xP78&message=\" + urlencode(%discord_message%))
 cmd edit report 71 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported §d%name%§6 for §d%reason%§6. Thanks for making the network safer!
-cmd edit report 72 ascon /cmd add reports %p% reported %name% for %reason%.
+cmd edit report 72 ascon /cmd add reports PRP | %p% reported %name% for %reason%.
 cmd edit report 73 let %sn% = array(\"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Trainee\", \"Developer\")
 cmd edit report 74 let %pgrp% = playergroup(%p%)
 cmd edit report 75 if %p% in %pgrp% then goto 77
 cmd edit report 76 exit
-cmd edit report 77 message %p% §d§lMN §6§oSTAFF §r§e§l| §c§lWARNING! §6Player §d%name% §6was reported for §d%reason%§6, go check the player!
+cmd edit report 77 message %p% §d§lMN §6§oSTAFF §r§e§l| §c§lWARNING! §6Player §d%name% §6was reported for §d%reason%§6! Check the situation.
 cmd edit report 78 exit
 cmd edit report 103 #BUG
 cmd edit report 104 %all% = onlineplayers()
 cmd edit report 105 %player% = %p% 
 cmd edit report 106 %form%[\"type\"] = \"custom_form\"
-cmd edit report 107 %form%[\"title\"] = \"§6Report a bug\"
+cmd edit report 107 %form%[\"title\"] = \"§6Bug Report Platform\"
 cmd edit report 108 %i1%[\"type\"] = \"input\"
-cmd edit report 109 %i1%[\"text\"] = \"§6Describe your bug below.\"
-cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type here...\"
+cmd edit report 109 %i1%[\"text\"] = \"§6Describe your bug below. §c§lWARNING! §r§dFalse bug reports are tracked and false reporters will be punished.\"
+cmd edit report 110 %i1%[\"placeholder\"] = \"§6Type the bug here...\"
 cmd edit report 111 %con%[] = %i1%
 cmd edit report 112 %form%[\"content\"] = %con%
 cmd edit report 113 %response% = dialog(%p%, %form%)
@@ -63,6 +63,6 @@ cmd edit report 115 if varset(%bug%) then goto 117
 cmd edit report 116 exit
 cmd edit report 117 %discord_message% = \"**Bug Report |** \" + %p% + \" reported the bug: \" + %bug% + \".\"
 cmd edit report 118 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=659777452771639315&token=PmtHRsLsqgVepbsf3CSp2CeTUkbnqFMR4wJxVXDZH0AVVO5mZGGqOV7O0DaKo320QVRn&message=\" + urlencode(%discord_message%))
-cmd edit report 119 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported this bug: §d%bug%§6. Thanks for making the server more bug-free!
-cmd edit report 120 ascon /cmd add bugs %p% reported this bug: %bug%
+cmd edit report 119 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported the following bug: §d%bug%§6. Thanks for making the Network more bug-free!
+cmd edit report 120 ascon /cmd add bugs BRP | %p% reported the following bug: %bug%.
 cmd edit report 121 exit
