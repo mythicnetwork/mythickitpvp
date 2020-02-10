@@ -1,19 +1,14 @@
 cmd create kits A advanced kit UI made by NikosProGamer
-cmd add kits let %allowed% = array(\"YT\", \"Guest\", \"Creator\", \"God\", \"Warrior\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"Voter\")
-cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %allowed% then goto 6
-cmd add kits message %p% §6You don't have permission to use this command.
-cmd add kits exit
 cmd add kits %player% = %p%
 cmd add kits %gui%[\"type\"] = \"form\"
-cmd add kits %gui%[\"title\"] = \"§6Kit UI 2.1.2\"
+cmd add kits %gui%[\"title\"] = \"§6Kit UI 3.0.0\"
 cmd add kits %gui%[\"content\"] = \"§6Choose a kit to fight!\"
 cmd add kits %button0%[\"text\"] = \"§6Member Kit\"
 cmd add kits %button1%[\"text\"] = \"§6Voter Kit\"
 cmd add kits %button2%[\"text\"] = \"§cWarrior Kit§r\"
 cmd add kits %button3%[\"text\"] = \"§dEmperor Kit§r\"
-cmd add kits %button4%[\"text\"] = \"§6Golden King Kit§r\"
-cmd add kits %button5%[\"text\"] = \"§cOverload Kit§r\"
+cmd add kits %button4%[\"text\"] = \"§6Golden King Kit - §d(1.000$)\"
+cmd add kits %button5%[\"text\"] = \"§cOverload Kit - §d(20.000$)\"
 cmd add kits %button6%[\"text\"] = \"§cExit\"
 cmd add kits %buttons%[] = %button0%
 cmd add kits %buttons%[] = %button1%
@@ -24,18 +19,18 @@ cmd add kits %buttons%[] = %button5%
 cmd add kits %buttons%[] = %button6%
 cmd add kits %gui%[\"buttons\"] = %buttons%
 cmd add kits %response% = dialog(%player%, %gui%)
-cmd add kits if %response% = 0 then goto 34
-cmd add kits if %response% = 1 then goto 43
-cmd add kits if %response% = 2 then goto 56
-cmd add kits if %response% = 3 then goto 65
-cmd add kits if %response% = 4 then goto 74
-cmd add kits if %response% = 5 then goto 89
+cmd add kits if %response% = 0 then goto 29
+cmd add kits if %response% = 1 then goto 38
+cmd add kits if %response% = 2 then goto 51
+cmd add kits if %response% = 3 then goto 60
+cmd add kits if %response% = 4 then goto 69
+cmd add kits if %response% = 5 then goto 84
 cmd add kits if %response% = 6 then exit
 cmd add kits exit
 cmd add kits #MemberKit
 cmd add kits let %kit1% = array(\"YT\", \"Voter\", \"Guest\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit1% then goto 40
+cmd add kits if %pgrp% in %kit1% then goto 35
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive pvp %p%
@@ -44,7 +39,7 @@ cmd add kits exit
 cmd add kits #VoterKit
 cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit2% then goto 49
+cmd add kits if %pgrp% in %kit2% then goto 44
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits ascon /give %p% 310 1
@@ -57,7 +52,7 @@ cmd add kits exit
 cmd add kits #WarriorKit
 cmd add kits let %kit3% = array(\"Warrior\", \"Creator\", \"Emperor\", \"YT\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit3% then goto 62
+cmd add kits if %pgrp% in %kit3% then goto 57
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive warriorkit %p%
@@ -66,7 +61,7 @@ cmd add kits exit
 cmd add kits #EmperorKit
 cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"God\")
 cmd add kits let %pgrp% = playergroup(%p%)
-cmd add kits if %pgrp% in %kit4% then goto 71
+cmd add kits if %pgrp% in %kit4% then goto 66
 cmd add kits message %p% §6You don't have permission to use this command.
 cmd add kits exit
 cmd add kits asop /kitgive emperorkit %p%
@@ -74,9 +69,9 @@ cmd add kits message %p% §6You have choosed §lEmperor§r §6kit!
 cmd add kits exit
 cmd add kits #GoldenKingKit(MONEY)
 cmd add kits let %money% = playerbalance(%p%)
-cmd add kits if %money% > 1000 then goto 81
-cmd add kits if %money% = 1000 then goto 81
-cmd add kits if %money% < 1000 then goto 79
+cmd add kits if %money% > 1000 then goto 76
+cmd add kits if %money% = 1000 then goto 76
+cmd add kits if %money% < 1000 then goto 74
 cmd add kits message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §e§lGolden King §r§6kit!
 cmd add kits exit
 cmd add kits ascon /takemoney 1000 %p% 
@@ -89,12 +84,12 @@ cmd add kits ascon /give %p% golden_apple 12
 cmd add kits exit
 cmd add kits #OverloadKit(MONEY)
 cmd add kits let %money% = playerbalance(%p%)
-cmd add kits if %money% > 10000 then goto 96
-cmd add kits if %money% = 10000 then goto 96
-cmd add kits if %money% < 10000 then goto 94
+cmd add kits if %money% > 20000 then goto 91
+cmd add kits if %money% = 20000 then goto 91
+cmd add kits if %money% < 20000 then goto 89
 cmd add kits message %p% §d§lMythic §cNetwork §6»§r§d You don't have enough money to buy the §c§lOverlord §r§6kit!
 cmd add kits exit
-cmd add kits ascon /takemoney %p% 50000 
+cmd add kits ascon /takemoney %p% 20000
 cmd add kits ascon /give %p% diamond_helmet 1 {ench:[{id:0s,lvl:4s}]}
 cmd add kits ascon /give %p% diamond_chestplate 1 {ench:[{id:0s,lvl:4s}]}
 cmd add kits ascon /give %p% diamond_leggings 1 {ench:[{id:0s,lvl:4s}]}
