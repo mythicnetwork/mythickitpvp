@@ -8,3 +8,4 @@ cmd add network %buttons%[] = %button0%
 cmd add network %gui%[\"buttons\"] = %buttons%
 cmd add network %response% = dialog(%player%, %gui%)
 cmd add network if %response% = 0 then exit
+cmd add network exit
