@@ -4,5 +4,5 @@ cmd add feed if varset(%player%) then goto 5
 cmd add feed let %status% = playerstatus(%p%) 
 cmd add feed let %saturation% = %status%[\"saturation\"]
 cmd add feed treat %p% %health% %saturation% 20
-cmd add feed message %p% §6You have been fed! 
+cmd add feed message %p% §6Your hunger has been fed!
 cmd add feed exit
