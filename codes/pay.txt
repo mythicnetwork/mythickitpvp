@@ -4,12 +4,12 @@ cmd edit paymoney 1 let %player% = %p%
 cmd edit paymoney 2 if varset(%args%[1]) then %player% = %args%[1]
 cmd edit paymoney 3 %all% = onlineplayers()
 cmd edit paymoney 31 let %form%[\"type\"] = \"custom_form\"
-cmd edit paymoney 32 let %form%[\"title\"] = \"§6Payment UI\"
+cmd edit paymoney 32 let %form%[\"title\"] = \"§6Payment UI 1.0.0\"
 cmd edit paymoney 35 let %item1%[\"type\"] = \"dropdown\"
-cmd edit paymoney 36 let %item1%[\"text\"] = \"§6Online Players\"
+cmd edit paymoney 36 let %item1%[\"text\"] = \"§6Select a player from the list:\"
 cmd edit paymoney 37 let %item1%[\"options\"] = %all%
 cmd edit paymoney 38 let %item2%[\"type\"] = \"input\"
-cmd edit paymoney 39 let %item2%[\"text\"] = \"§dType amount to pay. ($)\"
+cmd edit paymoney 39 let %item2%[\"text\"] = \"§dType a amount to pay the player. ($)\"
 cmd edit paymoney 41 let %item2%[\"placeholder\"] = \"§6Type your desired amount...\"
 cmd edit paymoney 53 let %content%[] = %item1%
 cmd edit paymoney 54 let %content%[] = %item2%
@@ -22,3 +22,6 @@ cmd edit paymoney 64 %amt% = %response%[1]
 cmd edit paymoney 65 if varset(%name%) and varset(%amt%) then goto 100
 cmd edit paymoney 66 exit
 cmd edit paymoney 100 /pay %name% %amt%
+cmd edit paymoney 101 message %p% §d§lM§cN §6Pay §e| §r§6Transaction of §d%amt% §6to §d%name% §dsuccessful. 
+cmd edit paymoney 102 message %name% §d§lM§cN §6Pay §e| §d%p% §6paid you §d%amt%§6!
+cmd edit paymoney 103 exit
