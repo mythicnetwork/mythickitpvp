@@ -1,0 +1,12 @@
+cmd create motdmngr MOTD manager
+cmd unregister motdmngr
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr ascon /motd del 1
+cmd add motdmngr /motd add §d§lMythic §cNetwork §6» §6KitPvP §41.2.0§6!
+cmd add motdmngr /motd add §d§lMythic §cNetwork §6» §6Welcome!
+cmd add motdmngr /motd add §d§lMythic §cNetwork §6» §6D-Day is here!
+cmd add motdmngr /motd add §d§lMythic §cNetwork §6» §6We are out of beta!
+cmd add motdmngr message onlineplayers() MOTD messages synchronized.
+cmd add motdmngr exit

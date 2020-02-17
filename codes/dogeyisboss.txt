@@ -1,4 +1,0 @@
-cmd create dogeyboss
-cmd add dogeyboss message %p% DOGEY IS SUPERIOR BOSS
-cmd add dogeyboss goto 1
-cmd add dogeyboss duration infinite
