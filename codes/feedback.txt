@@ -1,0 +1,18 @@
+cmd edit feedback 1 %all% = onlineplayers()
+cmd edit feedback 2 %player% = %p% 
+cmd edit feedback 3 %form%[\"type\"] = \"custom_form\"
+cmd edit feedback 4 %form%[\"title\"] = \"§6§lGive Feedback\"
+cmd edit feedback 5 %i1%[\"type\"] = \"input\"
+cmd edit feedback 6 %i1%[\"text\"] = \"§6Give us feedback on a feature that you suggest a edit/change or want a feature added. §c§lWARNING!\"
+cmd edit feedback 7 %i1%[\"placeholder\"] = \"§6Type your feedback here...\"
+cmd edit feedback 8 %con%[] = %i1%
+cmd edit feedback 9 %form%[\"content\"] = %con%
+cmd edit feedback 10 %response% = dialog(%p%, %form%)
+cmd edit feedback 11 %feedback% = %response%[0]
+cmd edit feedback 12 if varset(%feedback%) then goto 14
+cmd edit feedback 13 exit
+cmd edit feedback 14 %discord_message% = \"**Feedback |** \" + %p% + \" gave feedback: \" + %bug% + \".\"
+cmd edit feedback 15 let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=680417391271739413&token=VUGEDlPPAEpDoLXNuEo1du93_37DWbDYSZYRqK7ITb3VO6mRZymIzCFIf5NZLg0xBf5W&message=\" + urlencode(%discord_message%))
+cmd edit feedback 16 message %p% §d§lMythic §cNetwork§6 »§r§6 You reported the following bug: %feedback%§6. Thanks for making the Network more bug-free!
+cmd edit feedback 17 ascon /cmd add bugs FBP | %p% reported the following bug: %feedback%.
+cmd edit feedback 18 exit
