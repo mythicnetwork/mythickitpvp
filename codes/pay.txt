@@ -1,12 +1,12 @@
 cmd delete paymoney
-cmd create paymoney Payment UI 1.0.0
+cmd create paymoney Pay another player!
 cmd edit paymoney 1 let %player% = %p%
 cmd edit paymoney 2 if varset(%args%[1]) then %player% = %args%[1]
 cmd edit paymoney 3 %all% = onlineplayers()
 cmd edit paymoney 31 let %form%[\"type\"] = \"custom_form\"
-cmd edit paymoney 32 let %form%[\"title\"] = \"§6Payment UI 1.0.0\"
+cmd edit paymoney 32 let %form%[\"title\"] = \"§6Payment UI\"
 cmd edit paymoney 35 let %item1%[\"type\"] = \"dropdown\"
-cmd edit paymoney 36 let %item1%[\"text\"] = \"§6Select a player from the list:\"
+cmd edit paymoney 36 let %item1%[\"text\"] = \"§6Select a online player to pay!\"
 cmd edit paymoney 37 let %item1%[\"options\"] = %all%
 cmd edit paymoney 38 let %item2%[\"type\"] = \"input\"
 cmd edit paymoney 39 let %item2%[\"text\"] = \"§dType a amount to pay the player. ($)\"
