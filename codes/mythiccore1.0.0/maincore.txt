@@ -6,26 +6,18 @@ cmd add core if %p% = \"CONSOLE\" then goto 9
 cmd add core let %option% = %args%[1]
 cmd add core if %option% = \"\" then message %p% Please try one of these options: start, shut, info
 cmd add core if %option% = \"start\" then goto 9
-cmd add core if %option% = \"info\" then message %p% Mythic Core Info: version MTH-1.0.0snapshot. Services bundled within its code. MTH Snapshot Package coded by NikosProGamer.
+cmd add core if %option% = \"info\" then message %p% Mythic Core Info: version MTH-1.1.0. Services bundled within its code. MTH Package coded by NikosProGamer.
 cmd add core if %option% = \"shut\" then asop /cmd run shutcore
 cmd add core exit
 cmd add core %current-time% = %time%
 cmd add core message onlineplayers() KitPvP | The Mythic Core is initializing start up.
 cmd add core let %discord_message% = \"**```KitPvP | The Mythic Core is initializing start up.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 4
+cmd add core sleep 2
 cmd add core message onlineplayers() KitPvP | The Mythic Core is now loading services.
 cmd add core let %discord_message% = \"**```KitPvP | The Mythic Core is now loading services.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
-cmd add core message onlineplayers() Mythic Core KitPvP | Loading Crate Manager Service.
-cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Crate Manager Service.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core ascon /cmd run cratemngr
-cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Crate Manager Service.
-cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Crate Manager Service.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))urlencode(%discord_message%))
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Bossbar system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Bossbar system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -33,7 +25,7 @@ cmd add core ascon boss create logo
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Bossbar system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Bossbar system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Discord-based report Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Discord-based report Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -41,7 +33,7 @@ cmd add core ascon /cmd run dsr
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Discord-based report Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Discord-based report Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading ClearLagg system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading ClearLagg system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -49,7 +41,7 @@ cmd add core ascon /cmd run cl
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded ClearLagg system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded ClearLagg system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Join & Leave Messages system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Join & Leave Messages system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -58,15 +50,7 @@ cmd add core ascon /cmd run lm
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Join & Leave Messages system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Join & Leave Messages system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
-cmd add core message onlineplayers() Mythic Core KitPvP | Loading Spawners system Service.
-cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Spawners system Service.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core ascon /cmd run spawners
-cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Spawners system service.
-cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Spawners system Service.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Custom Kill Messages system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Custom Kill Messages system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -74,7 +58,7 @@ cmd add core ascon /cmd run customkill
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Custom Kill Messages system service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Custom Kill Messages system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Custom HUDSync system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Custom HUDSync system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -82,7 +66,7 @@ cmd add core ascon /cmd run chud
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded Custom HUDSync system service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded Custom HUDSync system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading MOTDSync system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading MOTDSync system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -90,7 +74,7 @@ cmd add core ascon /cmd run motdmngr
 cmd add core message onlineplayers() Mythic Core KitPvP | Loaded MOTDSync system service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loaded MOTDSync system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
-cmd add core sleep 2
+cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading MYTHICNETWORKSync system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading MYTHICNETWORKSync system Service.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
@@ -102,3 +86,4 @@ cmd add core %total-time% = %time% - %current-time%
 cmd add core message onlineplayers() KitPvP | The Mythic Core took %total-time% seconds to load all services and systems.
 cmd add core let %discord_message% = \"**```KitPvP | The Mythic Core took \" + %total-time% + \" seconds to load all services and systems.```**\"
 cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core exit
