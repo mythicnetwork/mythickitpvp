@@ -1,18 +1,20 @@
-cmd create banui Ban UI 1.1.0
+cmd create banui Simple Staff UI tool
 cmd edit banui 1 let %staff% = array(\"Owner\", \"OP\", \"Creator\", \"Mod\", \"Admin\")
 cmd edit banui 2 let %pgrp% = playergroup(%p%)
 cmd edit banui 3 if %pgrp% in %staff% then goto 6
 cmd edit banui 4 message %p% §6You don't have permission to use this command.
 cmd edit banui 5 exit
-cmd edit banui 6 if varset(%args%[1]) then %p% = %args%[1]
+cmd edit banui 6 let %player% = %p%
+cmd edit banui 7 if varset(%args%[1]) then %player% = %args%[1]
+cmd edit banui 8 %all% = onlineplayers()
 cmd edit banui 31 let %form%[\"type\"] = \"custom_form\"
-cmd edit banui 32 let %form%[\"title\"] = \"§6Ban UI 1.1.0\"
+cmd edit banui 32 let %form%[\"title\"] = \"§6§lSTAFF - §dBan UI\"
 cmd edit banui 35 let %item1%[\"type\"] = \"dropdown\"
-cmd edit banui 36 let %item1%[\"text\"] = \"§6Select a player to ban.\"
-cmd edit banui 37 let %item1%[\"options\"] = onlineplayers()
+cmd edit banui 36 let %item1%[\"text\"] = \"§6Select a online player to ban.\"
+cmd edit banui 37 let %item1%[\"options\"] = %all%
 cmd edit banui 38 let %item2%[\"type\"] = \"input\"
-cmd edit banui 39 let %item2%[\"text\"] = \"§6Type the reason why you are banning this person.\\n§6False ban reason may result to removal from the Staff Team.\"
-cmd edit banui 41 let %item2%[\"placeholder\"] = \"§dType here...\"
+cmd edit banui 39 let %item2%[\"text\"] = \"§6Type the reason why you are banning this person.\\n§c§lWARNING! §r§dFalse bans & ban reasons may result to removal from the Staff Team or warnings.\"
+cmd edit banui 41 let %item2%[\"placeholder\"] = \"§6Type the ban reason here...\"
 cmd edit banui 53 let %content%[] = %item1%
 cmd edit banui 54 let %content%[] = %item2%
 cmd edit banui 58 let %form%[\"content\"] = %content%
@@ -21,8 +23,7 @@ cmd edit banui 61 if %response% = %false% then exit
 cmd edit banui 62 %index% = %response%[0]
 cmd edit banui 63 %name% = %all%[%index%]
 cmd edit banui 64 %reason% = %response%[1]
-cmd edit banui 65 if varset(%name%) and varset(%reason%) then goto 100
+cmd edit banui 65 if varset(%name%) and varset(%reason%) then goto 1000
 cmd edit banui 66 exit
 cmd edit banui 100 /ban %name% %reason%
-cmd edit banui 101 let %pgrp% = playergroup(%p%)
-cmd edit banui 102 message onlineplayers() §d§lMythic §cNetwork§6 »§r §d%name% §6was banned by §d %pgrp% %p%§6 for §d%reason%§6.
+cmd edit banui 101 message onlineplayers() §d§lMythic §cNetwork§6 »§r §d%name% §6was banned by §d%p%§6 for §d%reason%§6.
