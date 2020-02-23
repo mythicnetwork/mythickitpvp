@@ -1,13 +1,15 @@
-cmd create cl §eClear lagg.
+ cmd create cl ClearLagg Core System
 cmd unregister cl
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 10 minutes.
-cmd add cl sleep 300
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 5 minutes.
-cmd add cl sleep 120
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 2 minutes.
-cmd add cl sleep 60
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 1 minute.
-cmd add cl sleep 60
-cmd add cl asop /lagg clear all
-cmd add cl message onlineplayers() §6ClearLagg §8§l>§r §6Cleared excessive entities.
-cmd add cl goto 1
+cmd edit cl 1 sync
+cmd edit cl 2 message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 10 minutes.
+cmd edit cl 3 sleep 300
+cmd edit cl 4 message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 5 minutes.
+cmd edit cl 5 sleep 120
+cmd edit cl 6 message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 2 minutes.
+cmd edit cl 7 sleep 60
+cmd edit cl 8 message onlineplayers() §6ClearLagg §8§l>§r §6Clearing entities in 1 minute.
+cmd edit cl 9 sleep 60
+cmd edit cl 10 asop /lagg clear all
+cmd edit cl 11 message onlineplayers() §6ClearLagg §8§l>§r §6Entities cleared and server is now running in §doptimized §6status.
+cmd edit cl 12 goto 1
+cmd edit cl 13 exit
