@@ -1,8 +1,8 @@
-cmd create report Report UI 3.0.0 by NikosProGamer
+cmd create report Report a player or a bug!
 cmd edit report 1 %all% = onlineplayers()
 cmd edit report 2 %player% = %p%
 cmd edit report 3 %gui%[\"type\"] = \"form\"
-cmd edit report 4 %gui%[\"title\"] = \"§6Report UI 2.0.0\"
+cmd edit report 4 %gui%[\"title\"] = \"§6Player & Bug Report\"
 cmd edit report 5 %gui%[\"content\"] = \"§6What would you like to report?\"
 cmd edit report 6 %button0%[\"text\"] = \"§dA player.\"
 cmd edit report 7 %button1%[\"text\"] = \"§dA bug.\"
