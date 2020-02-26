@@ -1,21 +1,20 @@
 cmd create servers Travel around the Mythic Network!
-cmd add servers sync
-cmd add servers %player% = %p%
-cmd add servers %gui%[\"type\"] = \"form\"
-cmd add servers %gui%[\"title\"] = \"§6Network Selector\"
-cmd add servers %gui%[\"content\"] = \"§6Select one of our servers to play!\"
-cmd add servers %button0%[\"text\"] = \"§6KitPvP - §d§l§oMYTHIC SERVERS (You're here!)§r\"
-cmd add servers %button1%[\"text\"] = \"§6Factions §d§lSEASON 1§6 - §d§l§oMYTHIC SERVERS \"
-cmd add servers %button2%[\"text\"] = \"§6Mysterious...\"
-cmd add servers %button3%[\"text\"] = \"§c§lExit\"
-cmd add servers %buttons%[] =%button0%
-cmd add servers %buttons%[] = %button1%
-cmd add servers %buttons%[] = %button2%
-cmd add servers %buttons%[] = %button3%
-cmd add servers %gui%[\"buttons\"] = %buttons%
-cmd add servers %response% = dialog(%player%, %gui%)
-cmd add servers if %response% = 0 then message %p% §6You're here on §c§lKitPvP§r§6!
-cmd add servers if %response% = 1 then /transferserver AX59004.pocket.pe 59004
-cmd add servers if %response% = 2 then message %p% §6Soon...
-cmd add servers if %response% = 3 then exit
-cmd add servers exit
+cmd edit servers 1 %player% = %p%
+cmd edit servers 2 %gui%[\"type\"] = \"form\"
+cmd edit servers 3 %gui%[\"title\"] = \"§6Network Selector\"
+cmd edit servers 4 %gui%[\"content\"] = \"§6Select one of our servers to play!\"
+cmd edit servers 5 %button0%[\"text\"] = \"§6KitPvP - §d§l§oMYTHIC SERVERS (You're here!)§r\"
+cmd edit servers 6 n%button1%[\"text\"] = \"§6Factions §d§lSEASON 1§6 - §d§l§oMYTHIC SERVERS \"
+cmd edit servers 7 %button2%[\"text\"] = \"§6Mysterious...\"
+cmd edit servers 8 %button3%[\"text\"] = \"§c§lExit\"
+cmd edit servers 9 %buttons%[] =%button0%
+cmd edit servers 10 %buttons%[] = %button1%
+cmd edit servers 11 %buttons%[] = %button2%
+cmd edit servers 12 %buttons%[] = %button3%
+cmd edit servers 13 %gui%[\"buttons\"] = %buttons%
+cmd edit servers 14 %response% = dialog(%player%, %gui%)
+cmd edit servers 15 if %response% = 0 then message %p% §6You're here on §c§lKitPvP§r§6!
+cmd edit servers 16 if %response% = 1 then /transferserver AX59004.pocket.pe 59004
+cmd edit servers 17 if %response% = 2 then message %p% §6Soon...
+cmd edit servers 18 if %response% = 3 then exit
+cmd edit servers 19 exit
