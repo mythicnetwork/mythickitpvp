@@ -3,8 +3,8 @@ cmd edit heal 1 let %player% = %args%[1]
 cmd edit heal 2 let %increase% = 20
 cmd edit heal 3 if varset(%args%[2]) then let %increase% = %args%[2]
 cmd edit heal 4 let %playerstatus% = playerstatus(%player%)
-cmd edit heal 5 let %newhealth% = %playerstatus%["health"] + %increase%
+cmd edit heal 5 let %newhealth% = %playerstatus%[\"health\"] + %increase%
 cmd edit heal 6 if %newhealth% > 20 then let %newhealth% = 20
 cmd edit heal 7 treat %player% %newhealth%
-cmd edit heal 8 message %p% §d§lM§cN §dHEAL §e| §r§dYou have been healed!
+cmd edit heal 8 message %p% §d§lM§cN §dHEAL §e|§r §dYou have been healed!
 cmd edit heal 9 exit
