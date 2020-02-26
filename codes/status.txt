@@ -1,11 +1,11 @@
 cmd create network Check the Network's Status
-cmd add network %player% = %p%
-cmd add network %gui%[\"type\"] = \"form\"
-cmd add network %gui%[\"title\"] = \"§6Network Status\"
-cmd add network %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\n§6Network Core - §e§lSTABLE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions §cBeta §6- §e§lONLINE§r\"
-cmd add network %button0%[\"text\"] = \"§c§lExit\"
-cmd add network %buttons%[] = %button0%
-cmd add network %gui%[\"buttons\"] = %buttons%
-cmd add network %response% = dialog(%player%, %gui%)
-cmd add network if %response% = 0 then exit
-cmd add network exit
+cmd edit network 1 %player% = %p%
+cmd edit network 2 %gui%[\"type\"] = \"form\"
+cmd edit network 3 %gui%[\"title\"] = \"§6Network Status\"
+cmd edit network 4 %gui%[\"content\"] = \"§d§lMythic §cNetwork §r§6Status\\n§r\\n§6Network Core - §e§lSTABLE§r\\n§r\\n§6KitPvP - §e§lONLINE§r\\n§r\\n§6Factions §6- §e§lONLINE§r\"
+cmd edit network 5 %button0%[\"text\"] = \"§c§lExit\"
+cmd edit network 6 %buttons%[] = %button0%
+cmd edit network 7 %gui%[\"buttons\"] = %buttons%
+cmd edit network 8 %response% = dialog(%player%, %gui%)
+cmd edit network 9 if %response% = 0 then exit
+cmd edit network 10 exit
