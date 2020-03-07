@@ -16,7 +16,7 @@ cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?
 cmd add core sleep 2
 cmd add core message onlineplayers() KitPvP | The Mythic Core is now loading services.
 cmd add core let %discord_message% = \"**```KitPvP | The Mythic Core is now loading services.```**\"
-cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))urlencode(%discord_message%))
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
 cmd add core sleep 1
 cmd add core message onlineplayers() Mythic Core KitPvP | Loading Bossbar system Service.
 cmd add core let %discord_message% = \"**```Mythic Core KitPvP | Loading Bossbar system Service.```**\"
