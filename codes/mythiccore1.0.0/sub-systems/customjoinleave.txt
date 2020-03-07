@@ -5,9 +5,9 @@ cmd edit jm 3 let %pgrp% = playergroup(%p%)
 cmd edit jm 4 if %pgrp% in %normal% then goto 7
 cmd edit jm 5 if %pgrp% in %premiun% then goto 9
 cmd edit jm 6 exit
-cmd edit jm 7 message onlineplayers() §d§lMythic §cNetwork §6» §r§e§l+ §r&§%p%
+cmd edit jm 7 message onlineplayers() §d§lMythic §cNetwork §6» §r§e§l+ §r§6%p%
 cmd edit jm 8 exit
-cmd edit jm 9 message onlineplayers() §d§lMythic §cNetwork §6» §r§e§l+ §r&§%p%
+cmd edit jm 9 message onlineplayers() §d§lMythic §cNetwork §6» §r§e§l+ §r§6%p%
 cmd edit jm 10 boss health logo 1
 cmd edit jm 11 let %bar% = \"      §d§lMythic §cNetwork\\n§r\\n§6§lKitPvP 1.3.0\"
 cmd edit jm 12 boss show logo onlineplayers()
@@ -23,7 +23,7 @@ cmd edit lm 3 let %pgrp% = playergroup(%p%)
 cmd edit lm 4 if %pgrp% in %normal% then goto 7
 cmd edit lm 5 if %pgrp% in %premiun% then goto 9
 cmd edit lm 6 exit
-cmd edit lm 7 message onlineplayers() §d§lMythic §cNetwork §6» §r§4§l- d%p%
+cmd edit lm 7 message onlineplayers() §d§lMythic §cNetwork §6» §r§4§l- §d%p%
 cmd edit lm 8 exit
 cmd edit lm 9 message onlineplayers() §d§lMythic §cNetwork §6» §r§4§l- §r§6%pgrp% §d%p%
 cmd edit lm 10 exit
