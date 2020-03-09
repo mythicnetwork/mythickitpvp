@@ -15,3 +15,11 @@ NikosProGamer
 Our Discord:
 
 - [Discord](https://discord.gg/7mu9bgG)
+
+### KitPvP Support Dropped
+
+We are not supporting the KitPvP github repository anymore, meaning we won't maintain the repository anymore. Feel free to fork it and modify it in any way you imagine.
+
+Thank you for the support.
+
+Mythic Network Development Team.
